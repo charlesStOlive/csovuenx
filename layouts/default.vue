@@ -1,5 +1,6 @@
 <template>
-  <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }">
+  <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }" dark> -->
+  <v-app id="inspire" class="bgimg" dark>
   <MError />
     <v-navigation-drawer
       v-model="showMenu"
@@ -14,12 +15,12 @@
             <v-icon :small="!miniVariant">fa-home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.home') }}</v-list-tile-title>
+            <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="$i18n.path('datacenter')" exact>
+        <!-- <v-list-tile :to="$i18n.path('datacenter')" exact>
           <v-list-tile-action>
-            <v-icon :small="!miniVariant">{{gapp('datacenter').icone}}</v-icon>
+            <v-icon :small="!miniVariant">{{ fas fa-home}}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ gt(gapp('datacenter').title) }}</v-list-tile-title>
@@ -32,8 +33,8 @@
           <v-list-tile-content>
             <v-list-tile-title>{{ gt(gapp('hightrize').title) }}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+        </v-list-tile>-->
+      </v-list> 
 
       <v-spacer></v-spacer>
 
@@ -43,7 +44,7 @@
             <v-icon :small="!miniVariant">fa-flag</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.french') }}</v-list-tile-title>
+            <v-list-tile-title>French version</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
          <v-list-tile v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')">
@@ -51,7 +52,7 @@
             <v-icon :small="!miniVariant">fa-flag</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.english') }}</v-list-tile-title>
+            <v-list-tile-title>English version</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -62,7 +63,7 @@
             <v-icon :small="!miniVariant">{{ miniVariant ? 'fa-chevron-right' : 'fa-chevron-left' }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.reduce') }}</v-list-tile-title>
+            <v-list-tile-title>Reduire le menu</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -122,9 +123,9 @@ export default {
   },
   mounted() {
     console.log("yo"+this.bgImage)
-    if(!this.apiTextReady) {
-      this.$store.dispatch('lang/getSelectedlocale');
-    } 
+    // if(!this.apiTextReady) {
+    //   this.$store.dispatch('lang/getSelectedlocale');
+    // } 
     this.$nuxt.$on('launchMenu', () => { 
          this.launchMenu();
        });
@@ -133,11 +134,11 @@ export default {
 
   computed: {
     ...mapGetters({
-      gt: 'lang/gt',
-      gapp: 'lang/gapp',
-      bgImage: 'lang/bgImage',
-      params: 'lang/params',
-      apiTextReady: 'lang/apiTextReady'
+      // gt: 'lang/gt',
+      // gapp: 'lang/gapp',
+      // bgImage: 'lang/bgImage',
+      // params: 'lang/params',
+      // apiTextReady: 'lang/apiTextReady'
     })
 
   },

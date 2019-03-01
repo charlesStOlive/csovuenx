@@ -50,10 +50,10 @@ module.exports = {
   ],
 
   generate: {
-    routes: [
-      '/', '/datacenter', '/hightrize',
-      '/fr', '/fr/datacenter', '/fr/hightrize'
-       ]
+    // routes: [
+    //   // '/', '/datacenter', '/hightrize',
+    //   // '/fr', '/fr/datacenter', '/fr/hightrize'
+    //    ]
   },
 
    /*
