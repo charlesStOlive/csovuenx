@@ -1,0 +1,26 @@
+{
+  "links": {
+    "home": "Home",
+    "datacenter": "Datacenter",
+    "hightrize": "Hight rize building",
+    "english": "English version",
+    "french": "French version",
+    "reduce": "Reduce menu"
+  },
+  "popup": {
+    "wait" : "Please wait"
+
+  },
+  "type_error": {
+    "request" : "Request error",
+    "model_cable" : "We didn't find data for cable. Information diplayed are false",
+    "model_busbar" : "We didn't find data for busbar. Information diplayed are false"
+
+  },
+  "solution_error": {
+    "refresh" : "App did'nt succeed to rich data information, try to refresh the page.",
+    "lowerInput" : "Try to modyfy inputs",
+    "missing_value" : "Contact administrator. à value is missing in cable or busbar data"
+
+  }
+}

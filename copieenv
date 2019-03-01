@@ -1,0 +1,2 @@
+MEDIA_PATH=http://schneiderapi.test/storage/app/media
+API_PATH=http://schneiderapi.test/api/

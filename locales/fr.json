@@ -1,0 +1,26 @@
+{
+  "links": {
+    "home": "Accueil",
+    "datacenter": "Datacenter",
+    "hightrize": "Hight rize building",
+    "english": "Version anglaise",
+    "french": "Version française",
+    "reduce": "Reduire menu"
+  },
+  "popup": {
+    "wait" : "Veuillez patienter"
+
+  },
+  "type_error": {
+    "request" : "Erreur de requête",
+    "model_cable" : "nous n'avons pas trouvé d'info sur les cables. les données sont fausses.",
+    "model_busbar" : "nous n'avons pas trouvé d'info sur les busbars. les données sont fausses."
+
+  },
+  "solution_error": {
+    "refresh" : "L'application n'arrive pas à se connecter. ",
+    "lowerInput" : "Modifier les INPUT",
+    "missing_value" : "Veuillez contacter l'administrateur."
+
+  }
+}
