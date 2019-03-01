@@ -11,7 +11,7 @@
               </v-flex>
               <v-flex shrink>
                 <div class="px-4 headline">
-                  <span class="text-md-right"  v-html="gt('g_intro')"/>
+                  <span class="text-md-right"  v-html="INTRO"/>
                 </div>
                 <!-- <div class="elevation-5 text-md-center headline">Welcome<br> compare busbar and cable</div> -->
               </v-flex>
@@ -49,7 +49,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      gt: 'lang/gt',
+      //gt: 'lang/gt',
       //
     })
   },
