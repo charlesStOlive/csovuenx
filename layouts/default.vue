@@ -10,7 +10,7 @@
       app
     >
       <v-list>
-        <v-list-tile :to="$i18n.path('')" exact>
+        <v-list-tile :to="$i18n.path('')"  exact>
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-home</v-icon>
           </v-list-tile-action>
