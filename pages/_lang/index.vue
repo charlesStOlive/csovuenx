@@ -1,26 +1,44 @@
 <template>
   <v-container fluid grid-list-md fill-height>
     <v-layout align-space-around justify-center row wrap fill-height>
-      <v-flex d-flex xs12 sm6 md4>
+      <v-flex d-flex xs12 sm6 md3>
         <v-card color="secondary" dark>
           <v-card-title primary class="title">Pourquoi ce site</v-card-title>
-          <v-card-text>{{ lorem }}</v-card-text>
+          <v-card-text>
+            {{ lorem }} <p><br> {{ lorem }} </p>
+          </v-card-text>
+          <v-card-text class="text-xs-center">
+            <v-avatar  tiled size="80" color="grey lighten-4" >
+              <img src="/avatar/moije.jpg" alt="avatar"/>
+            </v-avatar>
+            <v-btn small  @click="callContact()" color="secondary">Contactez moi</v-btn>
+          </v-card-text>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm6 md4>
         <v-layout row wrap>
           <v-flex d-flex>
             <v-layout row wrap>
+              <v-flex d-flex>
+                <v-card color="primary" dark>
+                  <v-card-title primary class="title">Expertise</v-card-title>
+                 <span class="grey--text pl-3">Choisissez une expertise : </span><br>
+                 <v-btn small outline color="white">Business Intelligence</v-btn>
+                 <v-btn small outline color="white">Marketing digital</v-btn>
+                 <v-btn small outline color="white">Developpeur</v-btn>
+                 <v-btn small  color="success">Voir mes compétences</v-btn>
+                </v-card>
+              </v-flex>
               <v-flex d-flex xs12>
-                <v-card>
+                <v-card color="primary" dark>
                 <v-img
                 class="white--text"
-                height="150px"
+                height="35vh"
                 src="img/creademo.jpg">
                 <v-container fill-height fluid>
                   <v-layout fill-height>
                     <v-flex xs12 align-end flexbox>
-                      <span class="headline">Une démo de BO</span>
+                      <span class="headline">Une démo</span>
                     </v-flex>
                   </v-layout>
                 </v-container>
@@ -33,64 +51,41 @@
                 </div>
               </v-card-title>
               <v-card-actions class="pt-0">
-                <v-btn small color="secondary">Dir Co</v-btn>
-                <v-btn small color="secondary">Agence</v-btn>
-                <v-btn small color="secondary">ECommerce</v-btn>
+                <v-btn small outline color="white">Dir Co</v-btn>
+                <v-btn small outline color="white">Agence</v-btn>
+                <v-btn small outline color="white">ECommerce</v-btn>
               </v-card-actions>
             </v-card>
               </v-flex>
-              <v-flex d-flex xs4>
-                <v-card class="mx-auto" color="#26c6da" dark max-width="400">
-                    <v-card-title>
-                        <v-icon large > fab fa-linkedin-in</v-icon>
-                    </v-card-title>
-                </v-card>
-              </v-flex>
-              <v-flex d-flex xs4>
-                <v-card class="mx-auto" color="#4078c0" dark max-width="400">
-                    <v-card-title>
-                        <v-icon large > fab fa-github</v-icon>
-                    </v-card-title>
-                </v-card>
-              </v-flex>
-              <v-flex d-flex xs4>
-                <v-card class="mx-auto" color="#162221" dark max-width="400">
-                    <v-card-title>
-                        <v-icon large > fab fa-vimeo-v</v-icon>
-                    </v-card-title>
-                </v-card>
-              </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex d-flex>
-            <v-card dark>
-              <v-card-title primary class="title">Compétences</v-card-title>
-              <v-card-text>{{ lorem.slice(0, 70) }}</v-card-text>
-            </v-card>
-          </v-flex>
+          
         </v-layout>
       </v-flex>
-      <v-flex d-flex xs12 sm6 md4>
+      <v-flex d-flex xs12 sm12 md5>
             <v-layout row wrap>
               <v-flex d-flex xs12>
-                <v-card color="primary" dark>
+                <v-card dark>
                   <v-card-title primary  class="title">Derniers projets</v-card-title >
-                      <v-carousel height="250px" hide-delimiters ma-0>
+                  <CarouselUnique :data="projects"></CarouselUnique>
+                      <!-- <v-carousel height="250px" hide-delimiters ma-0>
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
       :src="item.src"
     ></v-carousel-item>
-  </v-carousel>
+  </v-carousel> -->
                   </v-card>
           </v-flex>
-          <v-flex d-flex>
+          <v-flex d-flex xs12>
             <v-card dark>
               <v-card-title primary class="title">Clients</v-card-title>
+              <CarouselGroup :data="clients"></CarouselGroup>
+
               
 
 
-          <v-layout row wrap>
+          <!-- <v-layout row wrap>
             <v-flex
               v-for="n in 6"
               :key="n"
@@ -103,7 +98,7 @@
                 ></v-img>
               </v-card>
             </v-flex>
-          </v-layout>
+          </v-layout> -->
 
 
 
@@ -111,6 +106,27 @@
               
             </v-card>
           </v-flex>
+          <v-flex d-flex xs4>
+                <v-card class="mx-auto" color="#26c6da" dark >
+                    <v-card-title>
+                        <v-icon large > fab fa-linkedin-in</v-icon>
+                    </v-card-title>
+                </v-card>
+              </v-flex>
+              <v-flex d-flex xs4>
+                <v-card class="mx-auto" color="#4078c0" dark >
+                    <v-card-title>
+                        <v-icon large > fab fa-github</v-icon>
+                    </v-card-title>
+                </v-card>
+              </v-flex>
+              <v-flex d-flex xs4>
+                <v-card class="mx-auto" color="#162221" dark >
+                    <v-card-title>
+                        <v-icon large > fab fa-vimeo-v</v-icon>
+                    </v-card-title>
+                </v-card>
+              </v-flex>
         </v-layout>   
         </v-flex> 
       </v-layout>
@@ -118,44 +134,41 @@
 </template>
 
 <script>
+  import CarouselUnique from '@/Components/Widgets/CarouselUnique'
+  import CarouselGroup from '@/Components/Widgets/CarouselGroup'
   import { mapGetters } from 'vuex'
 
 export default {
+  components: {
+    CarouselUnique,
+    CarouselGroup
+  },
   data () {
     return {
       showBanner:false,
       lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`,
-      items: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-          }
-        ]
     }
   },
   head() {
     return { title: this.$t('home.title') }
   },
   mounted() {
-    this.showBanner = true
-    this.$store.commit('lang/setBgImage', null) 
+    this.showBanner = true;
+    this.$store.dispatch('data/getClients');
+    this.$store.dispatch('data/getProjects');
   },
   methods: {
     start() {
       this.$nuxt.$emit('launchMenu');
+    },
+    callContact() {
+      this.$nuxt.$emit('call-contact')
     }
   },
   computed: {
     ...mapGetters({
-      //gt: 'lang/gt',
+      clients: 'data/clients',
+      projects: 'data/projects',
       //
     })
   },

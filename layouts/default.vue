@@ -1,7 +1,8 @@
 <template>
   <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }" dark> -->
-  <v-app id="inspire" class="bgimg" dark>
+  <v-app id="inspire" dark>
   <MError />
+  <MContact />
     <v-navigation-drawer
       v-model="showMenu"
       :mini-variant="miniVariant"
@@ -18,22 +19,85 @@
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <!-- <v-list-tile :to="$i18n.path('datacenter')" exact>
+
+        <v-list-tile @click="callContact()" >
           <v-list-tile-action>
-            <v-icon :small="!miniVariant">{{ fas fa-home}}</v-icon>
+            <v-icon :small="!miniVariant">fa-envelope</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ gt(gapp('datacenter').title) }}</v-list-tile-title>
+            <v-list-tile-title>Contactez moi</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile :to="$i18n.path('hightrize')" exact>
+
+        <v-list-tile >
           <v-list-tile-action>
-            <v-icon :small="!miniVariant">{{gapp('hightrize').icone}}</v-icon>
+            <v-icon :small="!miniVariant">fa-briefcase</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ gt(gapp('hightrize').title) }}</v-list-tile-title>
+            <v-list-tile-title>Projets</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>-->
+        </v-list-tile>
+
+        <v-subheader>  Expertises</v-subheader>
+
+        <v-list-tile :to="$i18n.path('expertise/buiseness-intelligence')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-brain</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Business intelligence</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('expertise/marketing-digital')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-user-tag</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Marketing digital</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('expertise/developpeur')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-laptop</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Developpeur</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+
+        <v-subheader>Accès  Demo</v-subheader>
+
+        <v-list-tile :to="$i18n.path('expertise/buiseness-intelligence')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-chart-line</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Direction commercial</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('expertise/marketing-digital')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-pen-nib</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard Agence</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('expertise/developpeur')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-shopping-cart</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Ecommerce</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+
       </v-list> 
 
       <v-spacer></v-spacer>
@@ -94,6 +158,7 @@
 
 <script>
   import MError from '@/components/Modal/MError';
+  import MContact from '@/components/Modal/MContact';
   import { mapGetters } from 'vuex'
 
 export default {
@@ -101,7 +166,7 @@ export default {
   name: 'App',
   components: {
       MError,
-      //MExplain,
+      MContact
   },
   data () {
     return {
@@ -144,6 +209,9 @@ export default {
     launchMenu() {
       this.showMenu = true
     },
+    callContact() {
+      this.$nuxt.$emit('call-contact')
+    }
   }
 
 }

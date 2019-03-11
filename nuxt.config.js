@@ -47,6 +47,7 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '@/plugins/i18n.js',
+    { src: '~/plugins/carousel.js', ssr: false } 
   ],
 
   generate: {
