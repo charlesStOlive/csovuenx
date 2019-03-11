@@ -79,9 +79,7 @@
       <v-toolbar-title v-text="title" />
     </v-toolbar>
     <v-content>
-      <v-container fluid class="px-0 mx-0" >
         <nuxt />
-      </v-container>
     </v-content>
     <v-footer
       :fixed="fixed"
