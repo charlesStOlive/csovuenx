@@ -1,6 +1,6 @@
 <template>
-        <carousel :per-page="3" paginationPosition="top"  centerMode  loop>
-            <slide class="pl-4 pr-4" v-for="(item,i) in data" :key="i">
+        <carousel :per-page="3" navigationEnabled :paginationEnabled=false  centerMode loop>
+            <slide v-for="(item,i) in data" :key="i">
               <v-img :src="gi(item.logo)" aspect-ratio="1" height="75px" contain />
             </slide>
         </carousel>
@@ -10,7 +10,7 @@
   import { mapGetters } from 'vuex'
 
 export default {
-  props:['data'],
+  props:['data',],
   data () {
     return {
     }

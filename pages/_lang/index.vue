@@ -5,7 +5,7 @@
         <v-card color="secondary" dark>
           <v-card-title primary class="title">Pourquoi ce site</v-card-title>
           <v-card-text>
-            {{ lorem }} <p><br> {{ lorem }} </p>
+            <span v-html="settings.site_intro"/>
           </v-card-text>
           <v-card-text class="text-xs-center">
             <v-avatar  tiled size="80" color="grey lighten-4" >
@@ -67,7 +67,9 @@
               <v-flex d-flex xs12>
                 <v-card dark>
                   <v-card-title primary  class="title">Derniers projets</v-card-title >
+                  <v-flex xs12>
                   <CarouselUnique :data="projects"></CarouselUnique>
+                </v-flex>
                       <!-- <v-carousel height="250px" hide-delimiters ma-0>
     <v-carousel-item
       v-for="(item,i) in items"
@@ -80,7 +82,9 @@
           <v-flex d-flex xs12>
             <v-card dark>
               <v-card-title primary class="title">Clients</v-card-title>
-              <CarouselGroup :data="clients"></CarouselGroup>
+              <v-flex xs12 class="pl-4 pr-4">
+              <CarouselLogo   loop :data="clients"></CarouselLogo>
+              </v-flex>
 
               
 
@@ -135,13 +139,13 @@
 
 <script>
   import CarouselUnique from '@/Components/Widgets/CarouselUnique'
-  import CarouselGroup from '@/Components/Widgets/CarouselGroup'
+  import CarouselLogo from '@/Components/Widgets/CarouselLogo'
   import { mapGetters } from 'vuex'
 
 export default {
   components: {
     CarouselUnique,
-    CarouselGroup
+    CarouselLogo
   },
   data () {
     return {
@@ -154,6 +158,7 @@ export default {
   },
   mounted() {
     this.showBanner = true;
+    this.$store.dispatch('data/getSettings');
     this.$store.dispatch('data/getClients');
     this.$store.dispatch('data/getProjects');
   },
@@ -169,6 +174,7 @@ export default {
     ...mapGetters({
       clients: 'data/clients',
       projects: 'data/projects',
+      settings: 'data/settings',
       //
     })
   },

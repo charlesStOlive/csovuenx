@@ -3,6 +3,8 @@ export const state = () => ({
     dataReady: false,
     clients:[],
     projects:[],
+    project:[],
+    settings:[],
     application: {},
     components: [],
     graphs: [],
@@ -23,6 +25,16 @@ export const  getters = {
         console.log("projects");
 
         return state.projects;
+    },
+    project: state => {
+        console.log("project");
+
+        return state.project;
+    },
+    settings: state => {
+        console.log("projects");
+
+        return state.settings;
     },
     gi: (state) => (slug) => {
         if(slug == undefined) {
@@ -48,6 +60,18 @@ export const  mutations = {
         //console.log("store data setDatas => dataReady = true ")
 
     },
+    SET_PROJECT:(state, datas ) => {
+        state.project = datas
+        //state.dataReady = true;
+        //console.log("store data setDatas => dataReady = true ")
+
+    },
+    SET_SETTINGS:(state, datas ) => {
+        state.settings = datas
+        //state.dataReady = true;
+        //console.log("store data setDatas => dataReady = true ")
+
+    },
     SET_NOT_READY:(state) => {
         state.dataReady = false;
         //console.log("store data setDatas => dataReady = true ")
@@ -56,6 +80,21 @@ export const  mutations = {
 }
 
 export const  actions = {
+    getSettings({ commit, rootState }, app) {
+        console.log("getSettings")
+         state.dataReady = false;
+        return this.$axios.get(process.env.API_PATH+'settings/')
+        .then(response => {
+            commit('SET_SETTINGS', response.data);
+        })
+        .catch(function (error) {
+            let MyError = {}
+            MyError.type = "type_error.request"
+            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
+            MyError.solution = "solution_error.refresh"
+            commit("errors/newError", MyError, { root: true })
+        })
+    },
     getClients({ commit, rootState }, app) {
         console.log("getClients")
          state.dataReady = false;
@@ -77,6 +116,21 @@ export const  actions = {
         return this.$axios.get(process.env.API_PATH+'projects/')
         .then(response => {
             commit('SET_PROJECTS', response.data);
+        })
+        .catch(function (error) {
+            let MyError = {}
+            MyError.type = "type_error.request"
+            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
+            MyError.solution = "solution_error.refresh"
+            commit("errors/newError", MyError, { root: true })
+        })
+    },
+    getProject({ commit, rootState }, slug) {
+        console.log("get project : "+ slug)
+         state.dataReady = false;
+        return this.$axios.get(process.env.API_PATH+'project/'+slug)
+        .then(response => {
+            commit('SET_PROJECT', response.data);
         })
         .catch(function (error) {
             let MyError = {}

@@ -38,7 +38,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '@/assets/style/app.styl'
+    '@/assets/style/app.styl',
+    'vue-plyr/dist/vue-plyr.css'
+
   ],
 
   /*
@@ -47,7 +49,8 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '@/plugins/i18n.js',
-    { src: '~/plugins/carousel.js', ssr: false } 
+    { src: '~/plugins/carousel.js', ssr: false },
+    '@/plugins/vue-plyr' 
   ],
 
   generate: {
@@ -70,13 +73,22 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit'
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  markdownit: {
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    
   },
 
   /*
