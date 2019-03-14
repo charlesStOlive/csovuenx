@@ -159,8 +159,8 @@ export default {
   mounted() {
     this.showBanner = true;
     this.$store.dispatch('data/getSettings');
-    this.$store.dispatch('data/getClients');
-    this.$store.dispatch('data/getProjects');
+    // this.$store.dispatch('data/getClients');
+    // this.$store.dispatch('data/getProjects');
   },
   methods: {
     start() {

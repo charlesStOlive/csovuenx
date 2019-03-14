@@ -25,7 +25,7 @@
   import { mapGetters } from 'vuex'
 
 export default {
-  
+  props:['data'],
   components: {
     CarouselUnique,
     CarouselPhoto

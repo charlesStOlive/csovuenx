@@ -85,7 +85,9 @@ export const  actions = {
          state.dataReady = false;
         return this.$axios.get(process.env.API_PATH+'settings/')
         .then(response => {
-            commit('SET_SETTINGS', response.data);
+            commit('SET_SETTINGS', response.data.settings);
+            commit('SET_CLIENTS', response.data.clients);
+            commit('SET_PROJECTS', response.data.projects);
         })
         .catch(function (error) {
             let MyError = {}
@@ -95,36 +97,36 @@ export const  actions = {
             commit("errors/newError", MyError, { root: true })
         })
     },
-    getClients({ commit, rootState }, app) {
-        console.log("getClients")
-         state.dataReady = false;
-        return this.$axios.get(process.env.API_PATH+'clients/')
-        .then(response => {
-            commit('SET_CLIENTS', response.data);
-        })
-        .catch(function (error) {
-            let MyError = {}
-            MyError.type = "type_error.request"
-            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
-            MyError.solution = "solution_error.refresh"
-            commit("errors/newError", MyError, { root: true })
-        })
-    },
-    getProjects({ commit, rootState }, app) {
-        console.log("getClients")
-         state.dataReady = false;
-        return this.$axios.get(process.env.API_PATH+'projects/')
-        .then(response => {
-            commit('SET_PROJECTS', response.data);
-        })
-        .catch(function (error) {
-            let MyError = {}
-            MyError.type = "type_error.request"
-            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
-            MyError.solution = "solution_error.refresh"
-            commit("errors/newError", MyError, { root: true })
-        })
-    },
+    // getClients({ commit, rootState }, app) {
+    //     console.log("getClients")
+    //      state.dataReady = false;
+    //     return this.$axios.get(process.env.API_PATH+'clients/')
+    //     .then(response => {
+    //         commit('SET_CLIENTS', response.data);
+    //     })
+    //     .catch(function (error) {
+    //         let MyError = {}
+    //         MyError.type = "type_error.request"
+    //         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
+    //         MyError.solution = "solution_error.refresh"
+    //         commit("errors/newError", MyError, { root: true })
+    //     })
+    // },
+    // getProjects({ commit, rootState }, app) {
+    //     console.log("getClients")
+    //      state.dataReady = false;
+    //     return this.$axios.get(process.env.API_PATH+'projects/')
+    //     .then(response => {
+    //         commit('SET_PROJECTS', response.data);
+    //     })
+    //     .catch(function (error) {
+    //         let MyError = {}
+    //         MyError.type = "type_error.request"
+    //         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
+    //         MyError.solution = "solution_error.refresh"
+    //         commit("errors/newError", MyError, { root: true })
+    //     })
+    // },
     getProject({ commit, rootState }, slug) {
         console.log("get project : "+ slug)
          state.dataReady = false;
