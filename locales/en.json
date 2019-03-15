@@ -1,4 +1,7 @@
 {
+  "home": {
+    "title" : "Home"
+  },
   "links": {
     "home": "Home",
     "datacenter": "Datacenter",

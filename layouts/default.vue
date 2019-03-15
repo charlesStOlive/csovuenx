@@ -29,12 +29,21 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile >
+        <v-list-tile :to="$i18n.path('projects')" >
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-briefcase</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Projets</v-list-tile-title>
+            <v-list-tile-title>Les Projets</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('competences')" >
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-graduation-cap</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Competences</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -179,7 +188,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Canalis',
+      title: 'Charles SaintO',
       app: null
       //
     }

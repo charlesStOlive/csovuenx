@@ -2,11 +2,13 @@
         <carousel :per-page="1" autoplay paginationPosition="bottom-overlay" centerMode loop >
             <slide v-for="(item,i) in data" :key="i">
               <v-img :src="item.main_picture.path" aspect-ratio="1.9">
-                <v-container  fill-height >
-                    <v-layout align-end justify-end column fill-height class="pb-5"  >
-                      <div class="pa-2 bgimg">{{ item.name }}</div>
-                      <div class="pa-2 bgimg" v-if="item.client">{{ item.client.name }}</div>
-                      <v-btn color="primary" :to="{ name: 'projects-slug', params: { slug: item.slug }}"><v-icon small>fa-eye</v-icon></v-btn>
+                <v-container fill-height pa-0 pb-5 >
+                    <v-layout fill-height align-end justify-end row wrap width="150px">
+                      <v-flex d-child xs6 pa-2 class="primary">
+                        <h3 >{{ item.name }}</h3>
+                        <span v-if="item.client">{{ item.client.name }}</span><br>
+                          <v-btn  fab dark small color="white pl-0" :to="$i18n.path('projects/'+item.slug)"><v-icon color="primary" small>add</v-icon></v-btn>
+                      </v-flex>
                     </v-layout>
                   </v-container>
               </v-img>

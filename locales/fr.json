@@ -1,4 +1,7 @@
 {
+  "home": {
+    "title" : "Accueil"
+  },
   "links": {
     "home": "Accueil",
     "datacenter": "Datacenter",

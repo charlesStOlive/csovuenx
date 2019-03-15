@@ -3,12 +3,8 @@ export const state = () => ({
     dataReady: false,
     clients:[],
     projects:[],
-    project:[],
     settings:[],
-    application: {},
-    components: [],
-    graphs: [],
-    
+    competences:[],
 })
 
 export const  getters = {
@@ -22,14 +18,14 @@ export const  getters = {
         return state.clients;
     },
     projects: state => {
-        console.log("projects");
-
         return state.projects;
     },
-    project: state => {
-        console.log("project");
-
-        return state.project;
+    competences: (state) => (filter) => {
+        if(filter == null) {
+            return state.competences
+        } else {
+            return state.competences
+        } 
     },
     settings: state => {
         console.log("projects");
@@ -50,44 +46,35 @@ export const  getters = {
 export const  mutations = {
     SET_CLIENTS:(state, datas ) => {
         state.clients = datas
-        //state.dataReady = true;
-        //console.log("store data setDatas => dataReady = true ")
-
     },
     SET_PROJECTS:(state, datas ) => {
         state.projects = datas
-        //state.dataReady = true;
-        //console.log("store data setDatas => dataReady = true ")
-
-    },
-    SET_PROJECT:(state, datas ) => {
-        state.project = datas
-        //state.dataReady = true;
-        //console.log("store data setDatas => dataReady = true ")
-
     },
     SET_SETTINGS:(state, datas ) => {
         state.settings = datas
-        //state.dataReady = true;
-        //console.log("store data setDatas => dataReady = true ")
-
+    },
+    SET_COMPETENCES:(state, datas ) => {
+        console.log(datas)
+        state.competences = datas
     },
     SET_NOT_READY:(state) => {
         state.dataReady = false;
-        //console.log("store data setDatas => dataReady = true ")
-
+    },
+    SET_READY:(state) => {
+        state.dataReady = true;
     },
 }
 
 export const  actions = {
     getSettings({ commit, rootState }, app) {
-        console.log("getSettings")
-         state.dataReady = false;
+        commit('SET_NOT_READY');
         return this.$axios.get(process.env.API_PATH+'settings/')
         .then(response => {
             commit('SET_SETTINGS', response.data.settings);
             commit('SET_CLIENTS', response.data.clients);
             commit('SET_PROJECTS', response.data.projects);
+            commit('SET_COMPETENCES', response.data.competences);
+            commit('SET_READY');
         })
         .catch(function (error) {
             let MyError = {}
@@ -96,50 +83,5 @@ export const  actions = {
             MyError.solution = "solution_error.refresh"
             commit("errors/newError", MyError, { root: true })
         })
-    },
-    // getClients({ commit, rootState }, app) {
-    //     console.log("getClients")
-    //      state.dataReady = false;
-    //     return this.$axios.get(process.env.API_PATH+'clients/')
-    //     .then(response => {
-    //         commit('SET_CLIENTS', response.data);
-    //     })
-    //     .catch(function (error) {
-    //         let MyError = {}
-    //         MyError.type = "type_error.request"
-    //         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
-    //         MyError.solution = "solution_error.refresh"
-    //         commit("errors/newError", MyError, { root: true })
-    //     })
-    // },
-    // getProjects({ commit, rootState }, app) {
-    //     console.log("getClients")
-    //      state.dataReady = false;
-    //     return this.$axios.get(process.env.API_PATH+'projects/')
-    //     .then(response => {
-    //         commit('SET_PROJECTS', response.data);
-    //     })
-    //     .catch(function (error) {
-    //         let MyError = {}
-    //         MyError.type = "type_error.request"
-    //         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
-    //         MyError.solution = "solution_error.refresh"
-    //         commit("errors/newError", MyError, { root: true })
-    //     })
-    // },
-    getProject({ commit, rootState }, slug) {
-        console.log("get project : "+ slug)
-         state.dataReady = false;
-        return this.$axios.get(process.env.API_PATH+'project/'+slug)
-        .then(response => {
-            commit('SET_PROJECT', response.data);
-        })
-        .catch(function (error) {
-            let MyError = {}
-            MyError.type = "type_error.request"
-            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
-            MyError.solution = "solution_error.refresh"
-            commit("errors/newError", MyError, { root: true })
-        })
-    },
+    }
 }

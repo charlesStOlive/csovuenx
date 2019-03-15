@@ -1,11 +1,12 @@
 <template>
-  <v-container v-if="project.length != 0" fluid grid-list-md fill-height>
+  <v-container v-if="readyss" fluid grid-list-md fill-height>
     <v-layout align-space-around justify-center row wrap fill-height>
       <v-flex d-flex sm12 md3>
         <v-card flat dark>
           <v-card-title primary class="title">Project : {{ project.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(project.description)"/>
+            <Contact back_btn></Contact>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -22,13 +23,15 @@
 <script>
   import CarouselUnique from '@/Components/Widgets/CarouselUnique'
   import CarouselPhoto from '@/Components/Widgets/CarouselPhoto'
+  import Contact from '@/Components/Widgets/Contact'
   import { mapGetters } from 'vuex'
 
 export default {
   props:['data'],
   components: {
     CarouselUnique,
-    CarouselPhoto
+    CarouselPhoto,
+    Contact
   },
   
   data () {
@@ -42,19 +45,19 @@ export default {
   head() {
     //let slug = this.params.slug
     return { title: "Project "+this.$nuxt._route.params.slug }
-
+  },
+  fetch({store, params }) {
+    
   },
   mounted() {
-    this.slug = this.$nuxt._route.params.slug
-    this.$store.dispatch('data/getProject', this.slug);
-    console.log(this.$nuxt)
+    this.$store.dispatch('project/getProject', this.$nuxt._route.params.slug);
   },
   methods: {
-    
   },
   computed: {
     ...mapGetters({
-      project: 'data/project',
+      project: 'project/data',
+      readyss: 'project/ready'
       //
     }),
     compiledMarkdown: function (txt) {

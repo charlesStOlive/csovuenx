@@ -7,12 +7,7 @@
           <v-card-text>
             <span v-html="settings.site_intro"/>
           </v-card-text>
-          <v-card-text class="text-xs-center">
-            <v-avatar  tiled size="80" color="grey lighten-4" >
-              <img src="/avatar/moije.jpg" alt="avatar"/>
-            </v-avatar>
-            <v-btn small  @click="callContact()" color="secondary">Contactez moi</v-btn>
-          </v-card-text>
+          <Contact></Contact>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm6 md4>
@@ -139,13 +134,15 @@
 
 <script>
   import CarouselUnique from '@/Components/Widgets/CarouselUnique'
+  import Contact from '@/Components/Widgets/Contact'
   import CarouselLogo from '@/Components/Widgets/CarouselLogo'
   import { mapGetters } from 'vuex'
 
 export default {
   components: {
     CarouselUnique,
-    CarouselLogo
+    CarouselLogo,
+    Contact
   },
   data () {
     return {

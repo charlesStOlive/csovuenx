@@ -1,4 +1,4 @@
 <script>
-import Index from '~/pages/_lang/projects/_slug'
-export default Index
+import Slug from '~/pages/_lang/projects/_slug'
+export default Slug
 </script>
