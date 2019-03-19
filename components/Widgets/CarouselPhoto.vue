@@ -56,8 +56,19 @@ export default {
 
   },
   mounted() {
-    this.video = this.data.video !=  null ? true : false
-    this.videoExiste = this.data.video !=  null ? true : false
+    if(this.data.video != null) {
+      if(this.data.video.code != "") {
+        this.video = true
+        this.videoExiste = true
+      } else {
+        this.video = false
+        this.videoExiste = false
+      }
+    } else {
+      this.video = false
+      this.videoExiste = false
+
+    }
     this.pictureToShow = this.data.main_picture.path
   },
   methods: {

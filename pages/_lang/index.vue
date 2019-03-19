@@ -16,20 +16,35 @@
             <v-layout row wrap>
               <v-flex d-flex>
                 <v-card color="primary" dark>
-                  <v-card-title primary class="title">Expertise</v-card-title>
-                 <span class="grey--text pl-3">Choisissez une expertise : </span><br>
-                 <v-btn small outline color="white">Business Intelligence</v-btn>
+                  <v-card-title primary class="title">Expertise et compétences</v-card-title>
+                  <span class="grey--text pl-3">Choisissez une expertise : </span>
+                  <v-layout row wrap pt-3>
+                    <v-flex d-flex md6  xs12>
+                      <div class="text-xs-center"><v-btn :to="$i18n.path('expertises/manager-digital')" color="primary" dark><v-icon>fa-laptop</v-icon></v-btn><br>Manager digital</div>
+                    </v-flex>
+                    <v-flex d-flex md6  xs12>
+                      <div class="text-xs-center"><v-btn :to="$i18n.path('expertises/buiseness-intelligence')" color="primary" dark><v-icon>fa-brain</v-icon></v-btn><br>Business intelligence</div>
+                    </v-flex>
+                    <v-flex d-flex md6  xs12>
+                      <div class="text-xs-center"><v-btn :to="$i18n.path('expertises/chef-projet-technique-dev')" color="primary" dark><v-icon>fa-user-tag</v-icon></v-btn><br>Chef de projet technique / Dev</div>
+                    </v-flex>
+                    <v-flex d-flex md6  xs12>
+                      <div class="text-xs-center"><v-btn :to="$i18n.path('competences')" color="secondary" dark><v-icon>fa-graduation-cap</v-icon></v-btn><br>Competences</div>
+                    </v-flex>
+                  </v-layout>
+
+                 
+                 <!-- <v-btn small outline color="white">Business Intelligence</v-btn>
                  <v-btn small outline color="white">Marketing digital</v-btn>
                  <v-btn small outline color="white">Developpeur</v-btn>
-                 <v-btn small  color="success">Voir mes compétences</v-btn>
+                 <v-btn small  color="success">Voir mes compétences</v-btn> -->
                 </v-card>
               </v-flex>
               <v-flex d-flex xs12>
                 <v-card color="primary" dark>
                 <v-img
                 class="white--text"
-                height="35vh"
-                src="img/creademo.jpg">
+                src="/img/creademo.jpg">
                 <v-container fill-height fluid>
                   <v-layout fill-height>
                     <v-flex xs12 align-end flexbox>
@@ -46,9 +61,17 @@
                 </div>
               </v-card-title>
               <v-card-actions class="pt-0">
-                <v-btn small outline color="white">Dir Co</v-btn>
-                <v-btn small outline color="white">Agence</v-btn>
-                <v-btn small outline color="white">ECommerce</v-btn>
+                <v-layout row wrap pt-3>
+                    <v-flex d-flex md4  xs12>
+                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">Dir Commercial</v-btn>
+                    </v-flex>
+                    <v-flex d-flex md4  xs12>
+                      <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >Agence</v-btn>
+                    </v-flex>
+                    <v-flex d-flex md4  xs12>
+                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">ECommerce</v-btn>
+                    </v-flex>
+                </v-layout>
               </v-card-actions>
             </v-card>
               </v-flex>

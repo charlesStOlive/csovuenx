@@ -49,7 +49,16 @@
 
         <v-subheader>  Expertises</v-subheader>
 
-        <v-list-tile :to="$i18n.path('expertise/buiseness-intelligence')"  exact>
+        <v-list-tile :to="$i18n.path('expertises/manager-digital')"  exact>
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-laptop</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Manager digital</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
+        <v-list-tile :to="$i18n.path('expertises/buiseness-intelligence')"  exact>
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-brain</v-icon>
           </v-list-tile-action>
@@ -58,23 +67,16 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="$i18n.path('expertise/marketing-digital')"  exact>
+        <v-list-tile :to="$i18n.path('expertises/chef-projet-technique-dev')"  exact>
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-user-tag</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Marketing digital</v-list-tile-title>
+            <v-list-tile-title>Chef de projet technique / Dev</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="$i18n.path('expertise/developpeur')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-laptop</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Developpeur</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        
 
 
         <v-subheader>Accès  Demo</v-subheader>

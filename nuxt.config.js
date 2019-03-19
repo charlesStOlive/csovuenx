@@ -64,7 +64,14 @@ module.exports = {
   ** Router
   */
   router: {
-    middleware: 'i18n'
+    middleware: 'i18n',
+    scrollBehavior (to, from, savedPosition) {
+      if (to.hash) {
+        return {selector: to.hash}
+      } else {
+        return {x: 0, y: 0}
+      }
+    }
   },
 
   /*

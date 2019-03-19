@@ -4,7 +4,7 @@
       <v-flex
         v-for="project in projects"
         :key="project.id"
-        md4 sm6 xs12
+        xs4
       >
       <v-card flat tile>
         <v-img

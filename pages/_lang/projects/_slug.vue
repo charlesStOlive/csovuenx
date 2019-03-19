@@ -6,7 +6,7 @@
           <v-card-title primary class="title">Project : {{ project.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(project.description)"/>
-            <Contact back_btn></Contact>
+            <Contact back_btn projects_btn></Contact>
           </v-card-text>
         </v-card>
       </v-flex>
