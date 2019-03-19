@@ -156,9 +156,9 @@
 </template>
 
 <script>
-  import CarouselUnique from '@/Components/Widgets/CarouselUnique'
-  import Contact from '@/Components/Widgets/Contact'
-  import CarouselLogo from '@/Components/Widgets/CarouselLogo'
+  import CarouselUnique from '@/components/Widgets/CarouselUnique'
+  import Contact from '@/components/Widgets/Contact'
+  import CarouselLogo from '@/components/Widgets/CarouselLogo'
   import { mapGetters } from 'vuex'
 
 export default {

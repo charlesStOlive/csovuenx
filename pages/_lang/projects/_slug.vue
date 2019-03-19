@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import CarouselUnique from '@/Components/Widgets/CarouselUnique'
-  import CarouselPhoto from '@/Components/Widgets/CarouselPhoto'
-  import Contact from '@/Components/Widgets/Contact'
+  import CarouselUnique from '@/components/Widgets/CarouselUnique'
+  import CarouselPhoto from '@/components/Widgets/CarouselPhoto'
+  import Contact from '@/components/Widgets/Contact'
   import { mapGetters } from 'vuex'
 
 export default {
