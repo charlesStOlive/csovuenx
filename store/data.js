@@ -3,6 +3,7 @@ export const state = () => ({
     dataReady: false,
     clients:[],
     projects:[],
+    targets:[],
     settings:[],
     competences:[],
 })
@@ -19,6 +20,36 @@ export const  getters = {
     },
     projects: state => {
         return state.projects;
+    },
+    targets: state =>  {
+        return state.targets;
+    },
+    oneTarget: (state) => (slug) => {
+        return state.targets.find(obj => obj.slug === slug);
+    },
+    competenceToString: (state, getters) => (array) => {
+        let newArray = getters.shuffleAraay(array)
+        let txt = ''
+        newArray.forEach(function(element) {
+          txt += element.name + ' | '
+        });
+        return txt
+    },
+    shuffleAraay: (state) => (array) => {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+          // While there remain elements to shuffle...
+          while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+          }
+          return array;
     },
     competences: (state) => (filter) => {
         if(filter == null) {
@@ -54,8 +85,10 @@ export const  mutations = {
         state.settings = datas
     },
     SET_COMPETENCES:(state, datas ) => {
-        console.log(datas)
         state.competences = datas
+    },
+    SET_TARGETS:(state, datas ) => {
+        state.targets = datas
     },
     SET_NOT_READY:(state) => {
         state.dataReady = false;
@@ -73,7 +106,7 @@ export const  actions = {
             commit('SET_SETTINGS', response.data.settings);
             commit('SET_CLIENTS', response.data.clients);
             commit('SET_PROJECTS', response.data.projects);
-            commit('SET_COMPETENCES', response.data.competences);
+            commit('SET_TARGETS', response.data.targets);
             commit('SET_READY');
         })
         .catch(function (error) {
