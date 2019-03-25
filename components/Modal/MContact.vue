@@ -9,10 +9,25 @@
           <v-toolbar-title>Contactez Moi ! </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn dark small flat @click="dialog = false">Télchargez mon CV</v-btn>
+            <v-btn dark small flat>Télchargez mon CV</v-btn>
           </v-toolbar-items>
         </v-toolbar>
-        <TopAuthors />
+        <v-container >
+            <v-layout align-center justify-space-around row fill-height>
+              <v-flex md4 xs12>
+                <v-card>
+                 <TopAuthors />
+               </v-card>
+              </v-flex>
+              <v-flex md6 xs12>
+                <History/>
+              </v-flex>
+
+            </v-layout>
+          </v-container>
+       
+
+        
         
       </v-card>
     </v-dialog>
@@ -20,11 +35,13 @@
 </template>
 <script>
   import TopAuthors from '@/components/Widgets/TopAuthors'
+  import History from '@/components/Widgets/History'
   import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    TopAuthors
+    TopAuthors,
+    History
     },
   data() {
     return {
