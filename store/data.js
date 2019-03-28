@@ -62,8 +62,6 @@ export const  getters = {
         } 
     },
     settings: state => {
-        console.log("projects");
-
         return state.settings;
     },
     gi: (state) => (slug) => {

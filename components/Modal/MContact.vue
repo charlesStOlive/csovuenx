@@ -9,7 +9,7 @@
           <v-toolbar-title>Contactez Moi ! </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn dark small flat>Télchargez mon CV</v-btn>
+            <v-btn dark small flat :href="gi(settings.mycv)">Télchargez mon CV</v-btn>
           </v-toolbar-items>
         </v-toolbar>
         <v-container >
@@ -56,8 +56,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-        // gt: 'lang/gt',
-        // gi: 'lang/gi',
+        settings: 'data/settings',
+        gi: 'data/gi'
         // isCalculExiste: 'calculs/isCalculExiste',
         // execFixedFormule: 'calculs/execFixedFormule',
         // showFormule: 'calculs/showFormule',
