@@ -12,6 +12,9 @@ export const  getters = {
     dataReady: state => {
         return state.dataReady;
     },
+    dataNotReady: state => {
+        return !state.dataReady;
+    },
     AppTabActive: (state) => (i) => {
         //return state.datas['application']['tab_'+i+"_active"]
     },
@@ -100,16 +103,32 @@ export const  mutations = {
 
 export const  actions = {
     getSettings({ commit, rootState }, app) {
-        commit('SET_NOT_READY');
         return this.$axios.get(process.env.API_PATH+'settings/')
         .then(response => {
             commit('SET_SETTINGS', response.data.settings);
             commit('SET_CLIENTS', response.data.clients);
             commit('SET_PROJECTS', response.data.projects);
+            commit('SET_PROJECTS', response.data.projects);
             commit('SET_TARGETS', response.data.targets);
             commit('SET_READY');
         })
         .catch(function (error) {
+            console.log('error')
+            let MyError = {}
+            MyError.type = "type_error.request"
+            MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
+            MyError.solution = "solution_error.refresh"
+            commit("errors/newError", MyError, { root: true })
+        })
+    },
+    getCompetences({ commit, rootState }, app) {
+        commit('SET_NOT_READY');
+        return this.$axios.get(process.env.API_PATH+'competences/')
+        .then(response => {
+            commit('SET_COMPETENCES', response.data);
+        })
+        .catch(function (error) {
+            console.log('error')
             let MyError = {}
             MyError.type = "type_error.request"
             MyError.message = error.response.request.responseURL + " " + error.response.request.statusText

@@ -47,7 +47,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-subheader>  Expertises</v-subheader>
+        <!-- <v-subheader>  Expertises</v-subheader>
 
         <v-list-tile :to="$i18n.path('expertises/manager-digital')"  exact>
           <v-list-tile-action>
@@ -74,37 +74,28 @@
           <v-list-tile-content>
             <v-list-tile-title>Chef de projet technique / Dev</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
 
         
 
 
-        <v-subheader>Accès  Demo</v-subheader>
+        <v-subheader>Mes cibles</v-subheader>
 
-        <v-list-tile :to="$i18n.path('expertise/buiseness-intelligence')"  exact>
+        <v-list-tile :to="$i18n.path('target/pme')"  exact>
           <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-chart-line</v-icon>
+            <v-icon :small="!miniVariant">fa-building</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Direction commercial</v-list-tile-title>
+            <v-list-tile-title>PME</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="$i18n.path('expertise/marketing-digital')"  exact>
+        <v-list-tile :to="$i18n.path('target/eti-groupes')"  exact>
           <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-pen-nib</v-icon>
+            <v-icon :small="!miniVariant">fa-city</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Dashboard Agence</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile :to="$i18n.path('expertise/developpeur')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-shopping-cart</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Ecommerce</v-list-tile-title>
+            <v-list-tile-title>ETI & GROUPES</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -114,7 +105,7 @@
       <v-spacer></v-spacer>
 
       <v-list>
-        <v-list-tile v-if="$i18n.locale === 'en'" :to="`/fr` + $route.fullPath">
+        <v-list-tile v-if="$i18n.locale === 'fr'" :to="`/en` + $route.fullPath">
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-flag</v-icon>
           </v-list-tile-action>

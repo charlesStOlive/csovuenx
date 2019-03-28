@@ -48,11 +48,7 @@ export default {
       competenceData:null
     }
   },
-  head() {
-    //let slug = this.params.slug
-    return { title: "Project "+this.$nuxt._route.params.slug }
-
-  },
+ 
   fetch({store, params }) {
     
   },

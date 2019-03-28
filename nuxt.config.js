@@ -39,7 +39,8 @@ module.exports = {
   */
   css: [
     '@/assets/style/app.styl',
-    'vue-plyr/dist/vue-plyr.css'
+    'vue-plyr/dist/vue-plyr.css',
+    '~/assets/main.css'
 
   ],
 

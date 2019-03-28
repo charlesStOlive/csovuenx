@@ -26,8 +26,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
-            flat
+            outline
             @click="dialog = false"
           >
             Fermer

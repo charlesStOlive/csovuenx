@@ -59,8 +59,12 @@ export default {
     }
   },
   head() {
-    //let slug = this.params.slug
-    return { title: "Project "+this.$nuxt._route.params.slug }
+    if(this.$nuxt._route.params.slug) {
+      return { title: "Mission : "+this.$nuxt._route.params.slug }
+    } else {
+      return { title: "Cible : "+this.$nuxt._route.params.targetslug }
+    }
+    
   },
   fetch({store, params }) {
     

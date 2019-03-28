@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="dataReady" fluid grid-list-md fill-height >
+  <v-container  fluid grid-list-md fill-height >
     <v-layout row wrap align-center>
       <v-flex
         v-for="competence in competences()"
@@ -39,18 +39,13 @@
       return { title: this.$t('home.title') }
     },
     mounted() {
-      if(!this.$store.getters['data/dataReady']) {
-        console.log("Note ready")
-        this.$store.dispatch('data/getSettings');
-      }
+      this.$store.dispatch('data/getCompetences');
     },
     methods: {
     },
     computed: {
       ...mapGetters({
         dataReady : 'data/dataReady',
-        clients: 'data/clients',
-        projects: 'data/projects',
         competences: 'data/competences',
         //
       })

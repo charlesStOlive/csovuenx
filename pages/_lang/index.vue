@@ -1,6 +1,26 @@
 <template>
-  <v-container fluid grid-list-md fill-height>
-    <v-layout align-space-around justify-center row wrap fill-height>
+  <v-container fluid grid-list-md >
+    <v-dialog
+      v-model="dataNotReady"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="primary"
+        dark
+      >
+        <v-card-text>
+          {{ $t('popup.wait') }}
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+    <v-layout v-if="dataReady" row wrap align-start >
       <v-flex d-flex xs12 sm6 md3>
         <v-layout row>
         <v-flex>
@@ -110,51 +130,8 @@
         </v-layout>
       </v-flex>
       <v-flex d-flex xs12 sm12 md5>
-            <v-layout row wrap>
-              <v-flex d-flex xs12>
-                <v-card dark>
-                  <v-card-title primary  class="title">Derniers projets</v-card-title >
-                  <v-flex xs12>
-                  <CarouselUnique :data="projects"></CarouselUnique>
-                </v-flex>
-                      <!-- <v-carousel height="250px" hide-delimiters ma-0>
-    <v-carousel-item
-      v-for="(item,i) in items"
-      :key="i"
-      :src="item.src"
-    ></v-carousel-item>
-  </v-carousel> -->
-                  </v-card>
-          </v-flex>
-          <v-flex d-flex xs12>
-            <v-card dark>
-              <v-card-title primary class="title">Clients</v-card-title>
-              <v-flex xs12 class="pl-4 pr-4">
-              <CarouselLogo   loop :data="clients"></CarouselLogo>
-              </v-flex>
-
-              
-
-
-          <!-- <v-layout row wrap>
-            <v-flex
-              v-for="n in 6"
-              :key="n"
-              xs4
-            >
-              <v-card flat tile>
-                <v-img
-                  :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
-                  height="100px"
-                ></v-img>
-              </v-card>
-            </v-flex>
-          </v-layout> -->
-        </v-card>
-          </v-flex>
-
-
-           <v-flex xs12>
+        <v-layout row wrap >
+          <v-flex xs12>
             <v-card  dark>
               <v-layout>
             <v-flex xs4 ml-1>
@@ -184,6 +161,14 @@
           </v-layout>
             </v-card>
           </v-flex>
+
+          <v-flex d-flex xs12>
+            <v-card dark>
+              <v-card-title primary  class="title">Derniers projets</v-card-title >
+              <CarouselUnique :data="projects"></CarouselUnique>
+            </v-card>
+          </v-flex>
+          
         </v-layout>   
         </v-flex> 
       </v-layout>
@@ -235,6 +220,7 @@ export default {
       projects: 'data/projects',
       settings: 'data/settings',
       dataReady: 'data/dataReady',
+      dataNotReady: 'data/dataNotReady',
       //
     })
   },
