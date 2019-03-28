@@ -38,7 +38,7 @@
         <v-flex>
           <v-card color="#26c6da" dark with="100px" >
             <v-responsive :aspect-ratio="1/1" >
-              <v-card-title>
+              <v-card-title v-ripple @click="openUrl('https://www.linkedin.com/in/charlesstolive/')">
                   <v-icon large > fab fa-linkedin-in</v-icon>
               </v-card-title>
             </v-responsive>
@@ -47,7 +47,7 @@
         <v-flex>
           <v-card class="mx-auto" color="#4078c0" with="100px"  dark >
             <v-responsive :aspect-ratio="1/1" >
-              <v-card-title>
+              <v-card-title v-ripple  @click="openUrl('https://github.com/charlesStOlive')">
                   <v-icon large > fab fa-github</v-icon>
               </v-card-title>
             </v-responsive>
@@ -56,7 +56,7 @@
         <v-flex>
           <v-card class="mx-auto" color="#162221" with="100px"   dark >
             <v-responsive :aspect-ratio="1/1" >
-              <v-card-title>
+              <v-card-title v-ripple @click="openUrl('https://vimeo.com/stolive')" >
                   <v-icon large > fab fa-vimeo-v</v-icon>
               </v-card-title>
              </v-responsive>
@@ -209,6 +209,9 @@ export default {
     },
     callContact() {
       this.$nuxt.$emit('call-contact')
+    },
+    openUrl(url) {
+      window.open(url, '_blank');
     }
   },
   computed: {
