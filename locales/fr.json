@@ -1,24 +1,81 @@
 {
   "home": {
-    "title" : "Accueil"
+    "title" : "Accueil Charles SaintO",
+    "title_1" : "Pourquoi ce site",
+    "title_2" : "Qu'est ce que je peux faire pour vous demain ?",
+    "exemple_mission" : "Exemples de mission pour",
+    "skills" : "Compétences",
+    "sea_page" : "voir la page ",
+    "all_skills" : "voir toutes mes compétences",
+    "discover_demo" : "Découvrez une démo d'application.",
+    "choose_best" : "Choisissez ce qui vous convient le mieux",
+    "dir_co" : "Dir Commercial",
+    "agency" : "Agence",
+    "ecommerce" : "Ecommerce",
+    "last_projects" : "Derniers projets"
+
   },
   "links": {
-    "home": "Accueil",
-    "datacenter": "Datacenter",
-    "hightrize": "Hight rize building",
-    "english": "Version anglaise",
-    "french": "Version française",
-    "reduce": "Reduire menu"
+    "home":"Accueil",
+    "contact_me":"Contactez moi",
+    "projects": "Les Projets",
+    "skills": "Competences",
+    "pme": "PME",
+    "eti": "ETI & GROUPES",
+    "reduce": "Reduire menu",
+    "show" : "Voir"
   },
   "popup": {
-    "wait" : "Veuillez patienter"
-
+    "wait" : "Veuillez patienter",
+    "close" : "Fermer"
   },
-  "type_error": {
-    "request" : "Erreur de requête",
-    "model_cable" : "nous n'avons pas trouvé d'info sur les cables. les données sont fausses.",
-    "model_busbar" : "nous n'avons pas trouvé d'info sur les busbars. les données sont fausses."
+  "widget": {
+    "carousel": {
+      "show_project" : "Voir ce projet"
+    },
+    "contact": {
+      "contact_me" : "Contactez moi",
+      "all_project" : "Tous les projets",
+      "back_home" : "Retour accueil",
+      "me" : "Contactez Moi !",
+      "download" : "Télécharger mon CV"
+    },
+    "history": {
+      "title_1" : "Manager digital (2018)",
+      "sub_title_1" : "Société :  Day On Mars",
+      "title_2" : "Chef de projet technique (2015)",
+      "sub_title_2" : "Société :  Day On Mars",
+      "title_3" : "Commercial & chef de projet technique (2010)",
+      "sub_title_3" : "Société :  Concept - Image",
+      "title_4" : "Experience entreprenarial (2005)",
+      "sub_title_4" : "Société outil-c",
+      "title_5" : "Commercial (2004)",
+      "sub_title_5" : "Société :  Day On Mars",
+      "title_6" : "Ecole de commerce (2003)",
+      "sub_title_6" : "Société :  Day On Mars",
+      "title_7" : "He is alive ! (1980)",
+      "sub_title_7" : "Maternité de lyon croix rousse"
+    }
+  },
+  "skills": {
+    "next_wiki" : "La suite sur wikipedia",
+    "more" : "En savoir +"
+  },
+  "project": {
+    "project" : "Projet",
+    "photos" : "Photo & vidéo"
+  },
+  "target_mission": {
+    "target" : "Cible ",
+    "mission" : "Photo & vidéo"
+  },
 
+  "type_error": {
+    "error" : "Erreur",
+    "request" : "Erreur de requête",
+    "type" : "Type",
+    "message" : "Message",
+    "solution" : "Solution"
   },
   "solution_error": {
     "refresh" : "L'application n'arrive pas à se connecter. ",

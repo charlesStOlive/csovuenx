@@ -3,7 +3,7 @@
     <v-layout align-space-around justify-center row wrap fill-height>
       <v-flex d-flex sm12 md6>
          <v-card flat dark>
-          <v-card-title primary class="title">Expertise : {{ target.name }}</v-card-title>
+          <v-card-title primary class="title">{{ $t('target_mission.target') }} : {{ target.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(target.description)"/>
             <v-list >
@@ -60,9 +60,9 @@ export default {
   },
   head() {
     if(this.$nuxt._route.params.slug) {
-      return { title: "Mission : "+this.$nuxt._route.params.slug }
+      return { title: this.$t('target_mission.target')+" : "+this.$nuxt._route.params.slug }
     } else {
-      return { title: "Cible : "+this.$nuxt._route.params.targetslug }
+      return { title: this.$t('target_mission.mission')+ " : "+this.$nuxt._route.params.targetslug }
     }
     
   },

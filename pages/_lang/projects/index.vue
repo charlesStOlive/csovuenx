@@ -20,7 +20,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat color="white" :to="$i18n.path('projects/'+project.slug)" outline>Voir</v-btn>
+          <v-btn flat color="white" :to="$i18n.path('projects/'+project.slug)" outline>{{ $t('links.show') }}</v-btn>
         </v-card-actions>
       </v-card>
       </v-flex>

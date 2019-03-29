@@ -13,13 +13,13 @@
       >
       <v-card-title primary-title>
         <v-icon left>fa fa-exclamation-triangle</v-icon>
-        <span class="headline font-weight-bold">Error</span>
+        <span class="headline font-weight-bold">error</span>
       </v-card-title>
       <v-card-text> 
           <ul>
-            <li>Type : {{ $t(lastError.type) }} </li>
-            <li>Message : {{ lastError.message }} </li>
-            <li>Solution : {{ $t(lastError.solution) }} </li>
+            <li>{{ $t(type_error.type) }} : {{ $t(lastError.type) }} </li>
+            <li>{{ $t(type_error.message) }} : {{ lastError.message }} </li>
+            <li>{{ $t(type_error.solution) }} : {{ $t(lastError.solution) }} </li>
           </ul> 
         </v-card-text>
       <v-card-actions>

@@ -16,8 +16,8 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat dark  v-if="competence.error_wiki || competence.disabled_wiki" :href="competence.external_link" target='_blank'>En savoir +</v-btn>
-          <v-btn flat dark v-else :href="competence.external_link" target='_blank'>La suite sur wikipedia</v-btn>
+          <v-btn flat dark  v-if="competence.error_wiki || competence.disabled_wiki" :href="competence.external_link" target='_blank'>{{ $t('skills.more') }}</v-btn>
+          <v-btn flat dark v-else :href="competence.external_link" target='_blank'>{{ $t('skills.next_wiki') }}</v-btn>
         </v-card-actions>
       </v-responsive>
       </v-card>

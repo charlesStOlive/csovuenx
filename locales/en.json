@@ -1,29 +1,86 @@
 {
   "home": {
-    "title" : "Home"
+    "title" : "Home Charles SaintO",
+    "title_1" : "Why this web site",
+    "title_2" : "What can i do for you ?",
+    "exemple_mission" : "Mission exemple for",
+    "skills" : "Skills",
+    "sea_page" : "Show page ",
+    "all_skills" : "Show all skills",
+    "discover_demo" : "Discover an app demo",
+    "choose_best" : "Choose what suits your needs",
+    "dir_co" : "Dir Commercial",
+    "agency" : "Agency",
+    "ecommerce" : "Ecommerce",
+    "last_projects" : "Last projects"
+
   },
   "links": {
     "home": "Home",
-    "datacenter": "Datacenter",
-    "hightrize": "Hight rize building",
-    "english": "English version",
-    "french": "French version",
-    "reduce": "Reduce menu"
+    "contact_me": "Contact me",
+    "projects": "projects",
+    "skills": "Skills",
+    "pme": "PME",
+    "eti": "ETI & GROUPES",
+    "reduce": "Reduce menu",
+    "show" : "Show"
   },
   "popup": {
-    "wait" : "Please wait"
-
+    "wait" : "Please wait...",
+    "close" : "close"
   },
-  "type_error": {
-    "request" : "Request error",
-    "model_cable" : "We didn't find data for cable. Information diplayed are false",
-    "model_busbar" : "We didn't find data for busbar. Information diplayed are false"
+  "widget": {
+    "carousel": {
+      "show_project" : "show project"
+    },
+    "contact": {
+      "contact_me" : "Contact me",
+      "all_project" : "All project",
+      "back_home" : "Back home",
+      "me" : "Contact me !",
+      "download" : "Download my CV"
+    },
+    "history": {
+      "title_1" : "Digital manager (2018)",
+      "sub_title_1" : "Company :  Day On Mars",
+      "title_2" : "Technical project manager (2015)",
+      "sub_title_2" : "Company :  Day On Mars",
+      "title_3" : "Sales and project manager (2010)",
+      "sub_title_3" : "Company :  Concept - Image",
+      "title_4" : "Experience entreprenarial (2005)",
+      "sub_title_4" : "Company outil-c",
+      "title_5" : "Commercial (2004)",
+      "sub_title_5" : "Company :  Day On Mars",
+      "title_6" : "Ecole de commerce (2003)",
+      "sub_title_6" : "Company :  Day On Mars",
+      "title_7" : "A satar is born  ! (1980)",
+      "sub_title_7" : "Red cross maternity"
+    }
+  },
+  "skills": {
+    "next_wiki" : "La suite sur wikipedia",
+    "more" : "En savoir +"
+  },
+  "project": {
+    "project" : "Projet",
+    "photos" : "Photo & vidéo"
+  },
+  "target_mission": {
+    "target" : "Cible ",
+    "mission" : "Photo & vidéo"
+  },
 
+  "type_error": {
+    "error" : "Erreur",
+    "request" : "Erreur de requête",
+    "type" : "Type",
+    "message" : "Message",
+    "solution" : "Solution"
   },
   "solution_error": {
-    "refresh" : "App did'nt succeed to rich data information, try to refresh the page.",
-    "lowerInput" : "Try to modyfy inputs",
-    "missing_value" : "Contact administrator. à value is missing in cable or busbar data"
+    "refresh" : "L'application n'arrive pas à se connecter. ",
+    "lowerInput" : "Modifier les INPUT",
+    "missing_value" : "Veuillez contacter l'administrateur."
 
   }
 }

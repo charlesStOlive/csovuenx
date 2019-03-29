@@ -3,7 +3,7 @@
     <v-layout align-space-around justify-center row wrap fill-height>
       <v-flex d-flex sm12 md3>
         <v-card flat dark>
-          <v-card-title primary class="title">Project : {{ project.name }}</v-card-title>
+          <v-card-title primary class="title">{{ $t('project.project') }}Project : {{ project.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(project.description)"/>
             <Contact back_btn projects_btn></Contact>
@@ -12,7 +12,7 @@
       </v-flex>
       <v-flex d-flex sm12 md9>
         <v-card flat dark>
-          <v-card-title primary class="title">Photo & vidéo</v-card-title>
+          <v-card-title primary class="title">{{ $t('project.photos') }}</v-card-title>
             <CarouselPhoto :data="project"></CarouselPhoto>
         </v-card>
       </v-flex>

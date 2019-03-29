@@ -16,7 +16,7 @@
             <v-icon :small="!miniVariant">fa-home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.home') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -25,7 +25,7 @@
             <v-icon :small="!miniVariant">fa-envelope</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Contactez moi</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.contact_me') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -34,7 +34,7 @@
             <v-icon :small="!miniVariant">fa-briefcase</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Les Projets</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.projects') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -43,7 +43,7 @@
             <v-icon :small="!miniVariant">fa-graduation-cap</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Competences</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.skills') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -86,7 +86,7 @@
             <v-icon :small="!miniVariant">fa-building</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>PME</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.pme') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -95,7 +95,7 @@
             <v-icon :small="!miniVariant">fa-city</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>ETI & GROUPES</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.eti') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -110,7 +110,7 @@
             <v-icon :small="!miniVariant">fa-flag</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>French version</v-list-tile-title>
+            <v-list-tile-title>English version</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
          <v-list-tile v-else :to="$route.fullPath.replace(/^\/[^\/]+/, '')">
@@ -118,7 +118,7 @@
             <v-icon :small="!miniVariant">fa-flag</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>English version</v-list-tile-title>
+            <v-list-tile-title>French version</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -129,7 +129,7 @@
             <v-icon :small="!miniVariant">{{ miniVariant ? 'fa-chevron-right' : 'fa-chevron-left' }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Reduire le menu</v-list-tile-title>
+            <v-list-tile-title>{{ $t('links.reduce') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>

@@ -26,7 +26,7 @@
         <v-flex>
           <v-card color="secondary" dark>
             
-              <v-card-title primary class="title">Pourquoi ce site</v-card-title>
+              <v-card-title primary class="title">{{ $t('home.title_1') }}</v-card-title>
               <v-card-text>
                 <span v-html="settings.site_intro"/>
               </v-card-text>
@@ -72,7 +72,7 @@
             <v-layout row wrap>
               <v-flex >
                 <v-card color="primary" dark>
-                  <v-card-title primary class="title">Qu'est ce que je peux faire pour vous demain ?</v-card-title>
+                  <v-card-title primary class="title">{{ $t('home.title_2') }}</v-card-title>
                 <v-tabs v-if="dataReady" v-model="active" color="primary">
                   <v-tab v-for="target in targets" :key="target.slug" > {{ target.name }}</v-tab>
                   <v-tab-item
@@ -82,7 +82,7 @@
                   <v-card-title primary >
                    
                    <!-- <span v-html="$md.render(target.description)" ></span> -->
-                   Exemples de mission pour {{ target.name }} 
+                   {{ $t('home.exemple_mission') }} {{ target.name }} 
                   </v-card-title>
                     <v-list  class="primary"  two-line>
                       <template v-for="mission in target.missions" >
@@ -97,7 +97,7 @@
                           <v-list-tile-content :key="mission.id+'-'+target.slug" >
                             <v-list-tile-title><b>{{ mission.name }}</b></v-list-tile-title>
                             <v-list-tile-sub-title>
-                              <span class="text--primary">Compétences : </span>
+                              <span class="text--primary">{{ $t('home.skills') }}</span>
                               <span>| {{ competenceToString(mission.competences) }}</span>
                               
                             </v-list-tile-sub-title>
@@ -112,7 +112,7 @@
                         </v-list-tile>
                       </template>
                     </v-list>
-                    <v-btn small outline color="white" :href="$i18n.path('target/'+target.slug)">voir la page {{ target.name }}</v-btn> <v-btn small outline color="white" :href="$i18n.path('competences/')">voir toutes mes compétences</v-btn>
+                    <v-btn small outline color="white" :href="$i18n.path('target/'+target.slug)">{{ $t('home.sea_page') }} {{ target.name }}</v-btn> <v-btn small outline color="white" :href="$i18n.path('competences/')">{{ $t('home.all_skills') }}</v-btn>
 
 
               </v-tab-item>
@@ -140,20 +140,20 @@
             <v-flex xs8>
               <v-card-title>
                 <div>
-                  <span>Découvrez une démo d'application.</span><br>
-                  <span class="grey--text">Choisissez ce qui vous convient le mieux : </span><br>
+                  <span>{{ $t('home.discover_demo') }}</span><br>
+                  <span class="grey--text">{{ $t('home.choose_best') }} : </span><br>
                 </div>
               </v-card-title>
               <v-card-actions class="pt-0">
                 <v-layout row wrap pt-3>
                     <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">Dir Commercial</v-btn>
+                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">{{ $t('home.dir_co') }}</v-btn>
                     </v-flex>
                     <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >Agence</v-btn>
+                      <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >{{ $t('home.agency') }}</v-btn>
                     </v-flex>
                     <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">ECommerce</v-btn>
+                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">{{ $t('home.ecommerce') }}</v-btn>
                     </v-flex>
                 </v-layout>
               </v-card-actions>
@@ -164,7 +164,7 @@
 
           <v-flex d-flex xs12>
             <v-card dark>
-              <v-card-title primary  class="title">Derniers projets</v-card-title >
+              <v-card-title primary  class="title">{{ $t('home.last_projects') }}</v-card-title >
               <CarouselUnique :data="projects"></CarouselUnique>
             </v-card>
           </v-flex>

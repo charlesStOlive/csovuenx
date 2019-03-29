@@ -2,7 +2,7 @@
   <div>
   <MCompetence :dialog="showDialogCompetence" :data="competenceData" />
    <v-card v-if="ready" flat dark>
-    <v-card-title primary class="title">Mission : {{ mission.name }}</v-card-title>
+    <v-card-title primary class="title">{{ $t('target_mission.mission') }} : {{ mission.name }}</v-card-title>
     <v-card-text>
       <span v-if="mission.description" v-html="$md.render(mission.description)"/>
       <v-list v-if="mission.competences" >

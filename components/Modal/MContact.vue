@@ -6,14 +6,14 @@
           <v-btn icon dark @click="dialog = false">
             <v-icon>close</v-icon>
           </v-btn>
-          <v-toolbar-title>Contactez Moi ! </v-toolbar-title>
+          <v-toolbar-title>{{ $t('widget.contact.me') }}</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn dark small flat :href="gi(settings.mycv)">Télchargez mon CV</v-btn>
+            <v-btn dark small flat :href="gi(settings.mycv)">{{ $t('widget.contact.download') }}</v-btn>
           </v-toolbar-items>
         </v-toolbar>
         <v-container >
-            <v-layout align-center justify-space-around row fill-height>
+            <v-layout align-center justify-space-around row wrap fill-height>
               <v-flex md4 xs12>
                 <v-card>
                  <TopAuthors />

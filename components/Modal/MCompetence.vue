@@ -29,7 +29,7 @@
             outline
             @click="dialog = false"
           >
-            Fermer
+            {{ $t('popup.close') }}
           </v-btn>
         </v-card-actions>
       </v-card>

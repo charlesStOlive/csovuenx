@@ -4,7 +4,7 @@
         max-width="350"
       >
         <v-card>
-          <v-card-title class="headline">Request error</v-card-title>
+          <v-card-title class="headline">{{ $t('type_error.request') }}</v-card-title>
   
           <v-card-text>
             <p>{{ axiosError }}</p>

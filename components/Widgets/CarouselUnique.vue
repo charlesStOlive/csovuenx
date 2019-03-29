@@ -21,7 +21,7 @@
         </carousel>
         <div v-if="slideData != null" class="pa-2 text-xs-center">
           <h3>{{slideData.name}}</h3>
-          <v-btn outline :to="$i18n.path('projects/'+slideData.slug)"><v-icon >fa-eye</v-icon>&nbsp;voir ce projet<span v-if="slideData.client"> : {{ slideData.client.name }}</span></v-btn>
+          <v-btn outline :to="$i18n.path('projects/'+slideData.slug)"><v-icon >fa-eye</v-icon>&nbsp;{{ $t('widget.carousel.show_project') }}<span v-if="slideData.client"> : {{ slideData.client.name }}</span></v-btn>
         </div>
     </v-flex>
   </v-layout>

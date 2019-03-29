@@ -10,7 +10,7 @@
         dark
       >
         <v-card-text>
-          Please stand by
+          {{ $t('popup.wait') }}
           <v-progress-linear
             indeterminate
             color="white"
