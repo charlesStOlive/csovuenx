@@ -21,9 +21,9 @@
       </v-card>
     </v-dialog>
     <v-layout v-if="dataReady" row wrap align-start >
-      <v-flex d-flex xs12 sm6 md3>
-        <v-layout row>
-        <v-flex>
+      <v-flex d-flex xs12 sm6 md4>
+        <v-layout row wrap>
+        <v-flex md10 sm12>
           <v-card color="secondary" dark>
             
               <v-card-title primary class="title">{{ $t('home.title_1') }}</v-card-title>
@@ -33,35 +33,37 @@
               <Contact></Contact>
             
           </v-card>
-      </v-flex>
-      <v-flex>
-        <v-flex>
+      </v-flex >
+      <v-flex md2 sm12>
+        <v-layout row wrap>
+        <v-flex md12 sm4>
           <v-card color="#26c6da" dark with="100px" >
             <v-responsive :aspect-ratio="1/1" >
               <v-card-title v-ripple @click="openUrl('https://www.linkedin.com/in/charlesstolive/')">
-                  <v-icon large > fab fa-linkedin-in</v-icon>
+                  <v-icon> fab fa-linkedin-in</v-icon>
               </v-card-title>
             </v-responsive>
           </v-card>
         </v-flex>
-        <v-flex>
+        <v-flex md12 sm4>
           <v-card class="mx-auto" color="#4078c0" with="100px"  dark >
             <v-responsive :aspect-ratio="1/1" >
               <v-card-title v-ripple  @click="openUrl('https://github.com/charlesStOlive')">
-                  <v-icon large > fab fa-github</v-icon>
+                  <v-icon> fab fa-github</v-icon>
               </v-card-title>
             </v-responsive>
           </v-card>
         </v-flex>
-        <v-flex>
+        <v-flex md12 sm4>
           <v-card class="mx-auto" color="#162221" with="100px"   dark >
             <v-responsive :aspect-ratio="1/1" >
               <v-card-title v-ripple @click="openUrl('https://vimeo.com/stolive')" >
-                  <v-icon large > fab fa-vimeo-v</v-icon>
+                  <v-icon> fab fa-vimeo-v</v-icon>
               </v-card-title>
              </v-responsive>
           </v-card>
         </v-flex>
+      </v-layout>
       </v-flex>
     </v-layout>
     </v-flex>
@@ -129,36 +131,36 @@
           
         </v-layout>
       </v-flex>
-      <v-flex d-flex xs12 sm12 md5>
-        <v-layout row wrap >
+      <v-flex d-flex xs12 sm12 md4>
+        <v-layout wrap >
           <v-flex xs12>
             <v-card  dark>
-              <v-layout>
-            <v-flex xs4 ml-1>
-              <v-img src="/img/creademo.jpg"/>
-            </v-flex>
-            <v-flex xs8>
-              <v-card-title>
-                <div>
-                  <span>{{ $t('home.discover_demo') }}</span><br>
-                  <span class="grey--text">{{ $t('home.choose_best') }} : </span><br>
-                </div>
-              </v-card-title>
-              <v-card-actions class="pt-0">
-                <v-layout row wrap pt-3>
-                    <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">{{ $t('home.dir_co') }}</v-btn>
-                    </v-flex>
-                    <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >{{ $t('home.agency') }}</v-btn>
-                    </v-flex>
-                    <v-flex d-flex md4  xs12>
-                      <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">{{ $t('home.ecommerce') }}</v-btn>
-                    </v-flex>
-                </v-layout>
+            <v-layout row wrap>
+              <v-flex xs4 pl-1 pt-0>
+                <v-img src="/img/creademo.jpg"/>
+              </v-flex>
+              <v-flex xs8>
+                <v-card-title>
+                  <div>
+                    <span>{{ $t('home.discover_demo') }}</span><br>
+                    <span class="grey--text">{{ $t('home.choose_best') }} : </span><br>
+                  </div>
+                </v-card-title>
+              </v-flex> 
+            </v-layout>
+            <v-card-actions class="pt-0">
+              <v-layout row wrap pt-1>
+                  <v-flex d-flex md4  xs12>
+                    <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">{{ $t('home.dir_co') }}</v-btn>
+                  </v-flex>
+                  <v-flex d-flex md4  xs12>
+                    <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >{{ $t('home.agency') }}</v-btn>
+                  </v-flex>
+                  <v-flex d-flex md4  xs12>
+                    <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">{{ $t('home.ecommerce') }}</v-btn>
+                  </v-flex>
+              </v-layout>
               </v-card-actions>
-            </v-flex>
-          </v-layout>
             </v-card>
           </v-flex>
 
