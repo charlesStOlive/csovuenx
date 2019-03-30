@@ -28,7 +28,8 @@
             
               <v-card-title primary class="title">{{ $t('home.title_1') }}</v-card-title>
               <v-card-text>
-                <span v-html="settings.site_intro"/>
+                <span v-if="$i18n.locale === 'fr'" v-html="settings.site_intro"/>
+                <span v-else v-html="settings.site_intro_en"/>
               </v-card-text>
               <Contact></Contact>
             
@@ -149,15 +150,12 @@
               </v-flex> 
             </v-layout>
             <v-card-actions class="pt-0">
-              <v-layout row wrap pt-1>
+              <v-layout row wrap align-center justify-center pt-1>
                   <v-flex d-flex md4  xs12>
                     <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas">{{ $t('home.dir_co') }}</v-btn>
                   </v-flex>
                   <v-flex d-flex md4  xs12>
                     <v-btn small outline color="white"  href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency" >{{ $t('home.agency') }}</v-btn>
-                  </v-flex>
-                  <v-flex d-flex md4  xs12>
-                    <v-btn small outline color="white" href="http://demobo.charles-saint-olive.com/default/dashboard/ecommerce">{{ $t('home.ecommerce') }}</v-btn>
                   </v-flex>
               </v-layout>
               </v-card-actions>
