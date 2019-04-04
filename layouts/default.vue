@@ -143,6 +143,10 @@
     >
       <v-toolbar-side-icon @click="showMenu = !showMenu" />
       <v-toolbar-title v-text="title" />
+      <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-btn dark small flat :to="$i18n.path('survey')">{{ $t('links.survey') }}</v-btn>
+          </v-toolbar-items>
     </v-toolbar>
     <v-content>
         <nuxt />

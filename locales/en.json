@@ -23,7 +23,8 @@
     "pme": "PME",
     "eti": "ETI & GROUPES",
     "reduce": "Reduce menu",
-    "show" : "Show"
+    "show" : "Show",
+    "survey" : "Survey"
   },
   "popup": {
     "wait" : "Please wait...",

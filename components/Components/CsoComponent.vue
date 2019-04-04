@@ -1,60 +1,61 @@
  <template>
-  <v-layout row wrap >
-    <v-btn @click="callExplain(data)" icon absolute ripple right v-if="data.show_help">
+  <v-layout row wrap  >
+    <v-flex sx12   >
+      <span v-if="myForm.type == 'radio-group'">{{ myForm.label }}</span>
+      <v-radio-group v-if="myForm.type =='radio-group'" v-model="myForm.val" row height="10px" class="mb-0">
+        <template v-for="(opt,i) in myForm.list" >
+          <v-radio small :label="opt" :value="opt" :key="i"></v-radio>
+        </template>
+      </v-radio-group>
+      <v-textarea
+          v-if="myForm.type =='text'"
+          v-model="myForm.val"
+          outline
+          name="input-7-4"
+          :label="myForm.label"
+        ></v-textarea>
+        <v-select
+          v-if="myForm.type =='combo'"
+          v-model="myForm.val"
+          :items="myForm.list"
+          :label="myForm.label"
+          outline
+          class="pb-0 mb-0"
+        ></v-select>
+        <v-text-field
+            v-if="myForm.type =='label'"
+            v-model="myForm.val"
+            :label="myForm.label"
+            outline
+          ></v-text-field>
 
-                <v-icon  small color="grey lighten-1">fas fa-info</v-icon>
-    </v-btn>
-    <v-flex xs12 >
-      <h5>{{ gt(data.label) }}</h5>
     </v-flex>
-    <cso-slider v-if="data.type == 'slider'" :data="data"/>
-    <cso-combo v-if="data.type == 'combobox'" :data="data"/>
-    <cso-input v-if="data.type == 'numeric'"  :data="data"/>
-    <cso-input v-if="data.type == 'simple'"  :data="data"/>
+    
   </v-layout>
     
 
 </template>
 <script>
-  import CsoSlider from '~/components/Components/CsoSlider';
-  import CsoCombo from '~/components/Components/CsoCombo';
-  import CsoInput from '~/components/Components/CsoInput';
   import { mapGetters } from 'vuex'
 
 export default {
   components: {
-      CsoSlider,
-      CsoCombo,
-      CsoInput,
     },
 
 
 
-  props: ['data'],
+  props: ['slug'],
   data() {
     return {
-      slider: 45,
+      myForm: {},
+      switch1: false
     };
   },
   mounted() {
+    this.myForm = this.$store.getters['data/questions'](this.slug)
+
   },
   computed: {
-    valueSigle() {
-      let myMeasure = '';
-      if(this.data.measure != null) myMeasure = this.data.measure
-      return this.data.value+' '+myMeasure
-    },
-    ...mapGetters({
-        gt: 'lang/gt',
-      // ...
-      }),
   },
-  methods: {
-    callExplain(data) {
-      console.log(data)
-      this.$nuxt.$emit('show-dialogue', data);
-    }
-
-  }
 };
 </script>
