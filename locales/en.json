@@ -67,8 +67,8 @@
     "photos" : "Photo & vidéo"
   },
   "target_mission": {
-    "target" : "Cible ",
-    "mission" : "Photo & vidéo"
+    "target" : "Target ",
+    "mission" : "Mission"
   },
 
   "type_error": {
