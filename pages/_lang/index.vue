@@ -69,68 +69,10 @@
     </v-layout>
     </v-flex>
  
-      <v-flex d-flex xs12 sm6 md4>
-        <v-layout row wrap>
-          <v-flex>
-            <v-layout row wrap>
-              <v-flex >
-                <v-card color="primary" dark>
-                  <v-card-title primary class="title">{{ $t('home.title_2') }}</v-card-title>
-                <v-tabs v-if="dataReady" v-model="active" color="primary">
-                  <v-tab v-for="target in targets" :key="target.slug" > {{ target.name }}</v-tab>
-                  <v-tab-item
-                    v-for="target in targets"
-                    :key="target.slug"
-                  >
-                  <v-card-title primary >
-                   
-                   <!-- <span v-html="$md.render(target.description)" ></span> -->
-                   {{ $t('home.exemple_mission') }} {{ target.name }} 
-                  </v-card-title>
-                    <v-list  class="primary"  two-line>
-                      <template v-for="mission in target.missions" >
-                        
-                        <v-divider :key="mission.id"></v-divider>
-            
-                        <v-list-tile class="primary"
-                        :key="mission.id+'-'+target.slug"
-                        >
-                          
-            
-                          <v-list-tile-content :key="mission.id+'-'+target.slug" >
-                            <v-list-tile-title><b>{{ mission.name }}</b></v-list-tile-title>
-                            <v-list-tile-sub-title>
-                              <span class="text--primary">{{ $t('home.skills') }}</span>
-                              <span>| {{ competenceToString(mission.competences) }}</span>
-                              
-                            </v-list-tile-sub-title>
-                          </v-list-tile-content>
+      <v-flex  xs12 sm6 md4>
+             <!-- <BlocTargetMission /> -->
+             <BlocMoas />
 
-                          <v-list-tile-action>
-                            <v-btn icon ripple :href="$i18n.path('target/'+target.slug+'/mission/'+mission.slug)">
-                              <v-icon color="secondary">info</v-icon>
-                            </v-btn>
-                          </v-list-tile-action>
-
-                        </v-list-tile>
-                      </template>
-                    </v-list>
-                    <v-btn small outline color="white" :href="$i18n.path('target/'+target.slug)">{{ $t('home.sea_page') }} {{ target.name }}</v-btn> <v-btn small outline color="white" :href="$i18n.path('competences/')">{{ $t('home.all_skills') }}</v-btn>
-
-
-              </v-tab-item>
-            </v-tabs>
-
-
-
-
-                </v-card>
-              </v-flex>
-             
-            </v-layout>
-          </v-flex>
-          
-        </v-layout>
       </v-flex>
       <v-flex d-flex xs12 sm12 md4>
         <v-layout wrap >
@@ -178,6 +120,9 @@
 <script>
   import CarouselUnique from '@/components/Widgets/CarouselUnique'
   import Contact from '@/components/Widgets/Contact'
+  import BlocTargetMission from '@/components/Widgets/BlocTargetMission'
+  import BlocMoas from '@/components/Widgets/BlocMoas'
+
   import CarouselLogo from '@/components/Widgets/CarouselLogo'
   import { mapGetters } from 'vuex'
 
@@ -185,6 +130,8 @@ export default {
   components: {
     CarouselUnique,
     CarouselLogo,
+    BlocTargetMission,
+    BlocMoas,
     Contact
   },
   data () {

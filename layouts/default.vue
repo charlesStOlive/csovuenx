@@ -47,6 +47,15 @@
           </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-tile :to="$i18n.path('moas')" >
+          <v-list-tile-action>
+            <v-icon :small="!miniVariant">fa-flag-checkered</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>{{ $t('links.missions') }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile> 
+
         <!-- <v-subheader>  Expertises</v-subheader>
 
         <v-list-tile :to="$i18n.path('expertises/manager-digital')"  exact>
@@ -79,7 +88,7 @@
         
 
 
-        <v-subheader>Mes cibles</v-subheader>
+        <!-- <v-subheader>Mes cibles</v-subheader>
 
         <v-list-tile :to="$i18n.path('target/pme')"  exact>
           <v-list-tile-action>
@@ -97,7 +106,7 @@
           <v-list-tile-content>
             <v-list-tile-title>{{ $t('links.eti') }}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
 
 
       </v-list> 

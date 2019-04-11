@@ -9,7 +9,7 @@
       <v-card flat tile>
         <v-img
            :src="project.main_picture.path"
-          aspect-ratio="1.6"
+          aspect-ratio="1.9"
         ></v-img>
 
         <v-card-title primary-title>

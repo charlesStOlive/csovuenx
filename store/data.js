@@ -5,6 +5,7 @@ export const state = () => ({
     projects:[],
     targets:[],
     settings:[],
+    moas:[],
     competences:[],
     sendForm:false,
     formSend:false,
@@ -69,6 +70,9 @@ export const  getters = {
     },
     targets: state =>  {
         return state.targets;
+    },
+    moas: state =>  {
+        return state.moas;
     },
     oneTarget: (state) => (slug) => {
         return state.targets.find(obj => obj.slug === slug);
@@ -153,6 +157,9 @@ export const  mutations = {
     SET_TARGETS:(state, datas ) => {
         state.targets = datas
     },
+    SET_MOAS:(state, datas ) => {
+        state.moas = datas
+    },
     SET_NOT_READY:(state) => {
         state.dataReady = false;
     },
@@ -177,6 +184,7 @@ export const  actions = {
             commit('SET_PROJECTS', response.data.projects);
             commit('SET_PROJECTS', response.data.projects);
             commit('SET_TARGETS', response.data.targets);
+            commit('SET_MOAS', response.data.moas);
             commit('SET_READY');
         })
         .catch(function (error) {
