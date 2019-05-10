@@ -3,23 +3,15 @@
     <v-layout row wrap>
       <v-flex md4 xs12>
         <v-list two-line>
-          
-            <v-subheader>
-              {{ $t('home.title_2') }}
-            </v-subheader>
-
-  
-
-            <v-list-tile
-              v-for="item in moas"
-              :key="item.id"
-              :to="$i18n.path('moas/'+item.slug)"
-            >
-              <v-list-tile-content>
-                <v-list-tile-title><b>{{ item.name }}</b></v-list-tile-title>
-                <v-list-tile-sub-title> {{ item.accroche }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-            </v-list-tile>
+          <v-subheader>{{ $t('home.title_2') }}</v-subheader>
+          <v-list-tile v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
+            <v-list-tile-content>
+              <v-list-tile-title>
+                <b>{{ item.name }}</b>
+              </v-list-tile-title>
+              <v-list-tile-sub-title>{{ item.accroche }}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
         </v-list>
       </v-flex>
       <!-- <v-flex
@@ -42,38 +34,36 @@
       </v-layout>
       </v-card>
       </v-flex>
-    </v-flex> -->
-    <v-flex md8 pa-O ma-0>
-      <nuxt-child :key="$route.params.slug"/>
-    </v-flex>
+      </v-flex>-->
+      <v-flex md8 pa-O ma-0>
+        <nuxt-child :key="$route.params.slug"/>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
-  export default {
-    data () {
-      return {
-      }
-    },
-    head() {
-      return { title: this.$t('home.title') }
-    },
-    mounted() {
-      if(!this.$store.getters['moa/dataReady']) {
-        this.$store.dispatch('moa/getMoas');
-      }
-    },
-    methods: {
-    },
-    computed: {
-      ...mapGetters({
-        moas: 'moa/data',
-        ready: 'moa/ready'
-        //
-      })
-    },
+export default {
+  data() {
+    return {};
+  },
+  head() {
+    return { title: this.$t("home.title") };
+  },
+  mounted() {
+    if (!this.$store.getters["moa/dataReady"]) {
+      this.$store.dispatch("moa/getMoas");
+    }
+  },
+  methods: {},
+  computed: {
+    ...mapGetters({
+      moas: "moa/data",
+      ready: "moa/ready"
+      //
+    })
   }
+};
 </script>
