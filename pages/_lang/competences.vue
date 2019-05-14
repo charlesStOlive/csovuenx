@@ -6,7 +6,7 @@
         :key="competence.id"
         lg3 md4 sm6 xs12
       >
-      <v-card :id="competence.slug" color="grey darken-2">
+      <v-card :id="competence.slug" >
         <v-responsive :aspect-ratio="1/1">
         <v-card-title primary-title>
           <div>

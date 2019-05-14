@@ -1,15 +1,15 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card flat dark v-if="moa">
+    <v-card flat color="primary lighten-2" v-if="moa">
       <v-card-title primary class="title">{{ moa.name }}</v-card-title>
       <v-card-text>
         <span v-if="moa.description" v-html="$md.render(moa.description)"/>
-        <v-list v-if="moa.competences">
+        <v-list v-if="moa.competences" >
           <template v-for="competence in moa.competences">
             <v-divider :key="competence.id"></v-divider>
 
-            <v-list-tile :key="'c'+competence.id" @click="showDialogue(competence)">
+            <v-list-tile  :key="'c'+competence.id" @click="showDialogue(competence)">
               <v-list-tile-avatar>
                 <v-icon>{{ competence.wiki_picture }}</v-icon>
               </v-list-tile-avatar>

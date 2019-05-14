@@ -12,7 +12,7 @@
       <v-flex d-flex xs12 sm6 md4>
         <v-layout row wrap>
           <v-flex md10 sm12>
-            <v-card color="secondary" dark>
+            <v-card >
               <v-card-title primary class="title">{{ $t('home.title_1') }}</v-card-title>
               <v-card-text>
                 <span v-if="$i18n.locale === 'fr'" v-html="settings.site_intro"/>
@@ -65,7 +65,7 @@
       <v-flex d-flex xs12 sm12 md4>
         <v-layout wrap>
           <v-flex xs12>
-            <v-card dark>
+            <v-card>
               <v-layout row wrap>
                 <v-flex xs4 pl-1 pt-0>
                   <v-img src="/img/creademo.jpg"/>
@@ -86,16 +86,16 @@
                   <v-flex d-flex md4 xs12>
                     <v-btn
                       small
-                      outline
-                      color="white"
+                      color="secondary"
+                      primary
+                      
                       href="http://demobo.charles-saint-olive.com/horizontal/dashboard/saas"
                     >{{ $t('home.dir_co') }}</v-btn>
                   </v-flex>
                   <v-flex d-flex md4 xs12>
                     <v-btn
                       small
-                      outline
-                      color="white"
+                      color="secondary"
                       href="http://demobo.charles-saint-olive.com/boxed/dashboard/agency"
                     >{{ $t('home.agency') }}</v-btn>
                   </v-flex>
@@ -105,7 +105,7 @@
           </v-flex>
 
           <v-flex d-flex xs12>
-            <v-card dark>
+            <v-card>
               <v-card-title primary class="title">{{ $t('home.last_projects') }}</v-card-title>
               <CarouselUnique :data="projects"></CarouselUnique>
             </v-card>

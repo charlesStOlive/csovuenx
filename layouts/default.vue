@@ -1,6 +1,6 @@
 <template>
   <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }" dark> -->
-  <v-app id="inspire" dark>
+  <v-app id="inspire">
   <MError />
   <MContact />
     <v-navigation-drawer

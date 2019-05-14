@@ -15,7 +15,7 @@
           <v-card-actions>
             <v-btn
               flat
-              color="white"
+              color="primary"
               :to="$i18n.path('projects/'+project.slug)"
               outline
             >{{ $t('links.show') }}</v-btn>

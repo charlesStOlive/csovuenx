@@ -1,9 +1,9 @@
 <template>
 	 <v-layout row wrap>
     <v-flex>
-          <v-card color="primary" dark>
-            <v-card-title  class="title">{{ $t('home.title_2') }}</v-card-title>
-            <v-list two-line color="primary">
+          <v-card>
+            <v-card-title  color="primary" class="title">{{ $t('home.title_2') }}</v-card-title>
+            <v-list two-line >
               <v-list-tile  color="primary"
                 v-for="item in moas"
                 :key="item.id"
