@@ -1,4 +1,4 @@
 <script>
-import Index from '~/pages/_lang/moas'
+import Index from '~/pages/_lang/moas/index'
 export default Index
 </script>

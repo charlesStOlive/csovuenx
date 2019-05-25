@@ -2,6 +2,7 @@
   <v-container v-if="ready" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex md4 xs12>
+        <v-card>
         <v-list two-line>
           <v-subheader>{{ $t('home.title_ct') }}</v-subheader>
           <v-list-tile v-for="item in competencestypes" :key="item.id" :to="$i18n.path('competencestypes/'+item.slug)">
@@ -13,6 +14,7 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
+        </v-card>
       </v-flex>
       <v-flex md8 pa-O ma-0>
         <nuxt-child :key="$route.params.slug"/>

@@ -2,6 +2,7 @@
   <v-container v-if="ready" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex md4 xs12>
+        <v-card>
         <v-list two-line>
           <v-subheader>{{ $t('home.title_2') }}</v-subheader>
           <v-list-tile v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
@@ -13,7 +14,9 @@
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
+        </v-card>
       </v-flex>
+      
       <!-- <v-flex
         v-for="project in projects"
         :key="project.id"

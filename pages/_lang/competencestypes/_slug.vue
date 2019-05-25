@@ -1,8 +1,13 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card flat color="primary lighten-2" v-if="competencestype">
-      <v-card-title primary class="title">{{ competencestype.name }}</v-card-title>
+    <v-card  v-if="competencestype">
+      <v-card-title primary-title>
+        <div>
+            <div class="headline">{{ competencestype.name }}</div>
+            <span class="primary--text">Cliquez sur une compétence pour plus d'information</span>
+        </div>
+      </v-card-title>
       <v-card-text>
         <v-list v-if="competencestype.competences" >
           <template v-for="competence in competencestype.competences">

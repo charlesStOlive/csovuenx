@@ -1,3 +1,3 @@
 <template>
-  <h2>Choisissez une mission</h2>
+  <h2>Choisissez une compétence</h2>
 </template>

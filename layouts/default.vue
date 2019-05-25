@@ -38,7 +38,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="$i18n.path('competences')" >
+        <v-list-tile :to="$i18n.path('competencestypes')" >
           <v-list-tile-action>
             <v-icon :small="!miniVariant">fa-graduation-cap</v-icon>
           </v-list-tile-action>
