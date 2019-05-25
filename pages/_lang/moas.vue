@@ -50,7 +50,7 @@ export default {
     return {};
   },
   head() {
-    return { title: this.$t("home.title") };
+    return { title: "MOAS" };
   },
   mounted() {
     if (!this.$store.getters["moa/dataReady"]) {
