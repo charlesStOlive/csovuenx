@@ -33,7 +33,7 @@ import { mapGetters } from "vuex";
 export default {
   props: ["data"],
   components: {
-    MCompetence
+    MCompetence,
     Contact
   },
 
