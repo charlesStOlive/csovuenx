@@ -2,10 +2,10 @@
   <v-container v-if="ready" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex md4 xs12>
-        <v-card>
-        <v-list two-line>
+        <v-card  color="rgb(255, 255, 255, 0.8)">
+        <v-list class="transparent"  two-line>
           <v-subheader>{{ $t('home.title_2') }}</v-subheader>
-          <v-list-tile v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
+          <v-list-tile class="transparent" v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
             <v-list-tile-content>
               <v-list-tile-title>
                 <b>{{ item.name }}</b>
@@ -70,3 +70,8 @@ export default {
   }
 };
 </script>
+<style>
+.transparent {
+   background-color: rgba(255, 255, 255, 0)!important;
+ }
+</style>

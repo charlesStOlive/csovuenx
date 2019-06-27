@@ -5,6 +5,7 @@ export const state = () => ({
     projects:[],
     targets:[],
     settings:[],
+    false_contacts:[],
     moas:[],
     competences:[],
     sendForm:false,
@@ -111,6 +112,14 @@ export const  getters = {
     settings: state => {
         return state.settings;
     },
+    settings_contacts: state => {
+        return state.settings.contacts;
+    },
+    false_contacts: state => {
+        console.log("false_contacts")
+        console.log(state.false_contacts)
+        return state.false_contacts;
+    },
     gi: (state) => (slug) => {
         if(slug == undefined) {
             console.log("error : "+slug);
@@ -150,6 +159,11 @@ export const  mutations = {
     },
     SET_SETTINGS:(state, datas ) => {
         state.settings = datas
+        
+    },
+    SET_CONTACTS:(state, datas ) => {
+        state.false_contacts = datas
+        
     },
     SET_COMPETENCES:(state, datas ) => {
         state.competences = datas
@@ -180,10 +194,10 @@ export const  actions = {
         return this.$axios.get(process.env.API_PATH+'settings/')
         .then(response => {
             commit('SET_SETTINGS', response.data.settings);
-            commit('SET_CLIENTS', response.data.clients);
+            commit('SET_CONTACTS', response.data.false_contacts);
+            //commit('SET_CLIENTS', response.data.clients);
             commit('SET_PROJECTS', response.data.projects);
-            commit('SET_PROJECTS', response.data.projects);
-            commit('SET_TARGETS', response.data.targets);
+            //commit('SET_TARGETS', response.data.targets);
             commit('SET_MOAS', response.data.moas);
             commit('SET_READY');
         })

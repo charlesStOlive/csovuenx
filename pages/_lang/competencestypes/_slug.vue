@@ -1,7 +1,7 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card  v-if="competencestype">
+    <v-card color="rgb(255, 255, 255, 0.8)"  v-if="competencestype">
       <v-card-title primary-title>
         <div>
             <div class="headline">{{ competencestype.name }}</div>
@@ -9,7 +9,7 @@
         </div>
       </v-card-title>
       <v-card-text>
-        <v-list v-if="competencestype.competences" >
+        <v-list class="transparent"  v-if="competencestype.competences" >
           <template v-for="competence in competencestype.competences">
             <v-divider :key="competence.id"></v-divider>
 
@@ -80,6 +80,9 @@ export default {
 };
 </script>
 <style>
+.transparent {
+   background-color: rgba(255, 255, 255, 0)!important;
+ }
 .resultContainer {
   background-color: rgb(255, 255, 255, 0.8);
 }

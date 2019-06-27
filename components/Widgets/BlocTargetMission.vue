@@ -37,7 +37,7 @@
 
                           <v-list-tile-action>
                             <v-btn icon ripple :href="$i18n.path('target/'+target.slug+'/mission/'+mission.slug)">
-                              <v-icon color="secondary">info</v-icon>
+                              <v-icon color="primary">info</v-icon>
                             </v-btn>
                           </v-list-tile-action>
 

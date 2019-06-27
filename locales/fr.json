@@ -1,19 +1,26 @@
 {
   "home": {
     "title" : "Accueil Charles SaintO",
-    "title_1" : "Pourquoi ce site",
-    "title_2" : "Qu'est ce que je peux faire pour vous demain ?",
+    "title_1" : "Bienvenue",
+    "title_2" : "Les missions d'un Digital Manager",
     "title_ct" : "Choisissez un type de compétences. ",
     "exemple_mission" : "Exemples de mission pour",
     "skills" : "Compétences",
     "sea_page" : "voir la page ",
     "all_skills" : "voir toutes mes compétences",
-    "discover_demo" : "Découvrez une démo d'application.",
+    "discover_demo" : "Découvrez une démo ",
     "choose_best" : "Choisissez ce qui vous convient le mieux",
     "dir_co" : "Commercial",
     "agency" : "Agence",
     "ecommerce" : "Ecommerce",
-    "last_projects" : "Derniers projets"
+    "last_projects" : "Derniers projets",
+    "exemple_data_co" : "Exemple traitement de données",
+    "key_title" : "Comment le site s'adapte",
+    "key_description_no_user" : "Le site change d'aspect et de contenu si vous arrivez d'un de mes mails. faite un test en choisissant un des deux contacts.",
+    "key_description_is_user" : "Vous arrivez d'un de mes mails. le contenu s'adapte à vous pas la créa, il manque votre société dans mes données. faite un test en choisissant un des deux contacts.",
+    "key_description_is_user_contact" : "Vous arrivez d'un de mes mails. le site s'est adapté grâce à votre couleur et le logo",
+    "crm_title" : "Exemple traitement de données",
+    "crm_description" : "Afin de montrer mes capacité de traitements j'ai contruit un faux CRM avec 25 000 ventes, 50 commerciaux et 100 clients"
 
   },
   "links": {
@@ -26,7 +33,8 @@
     "reduce": "Reduire menu",
     "show" : "Voir",
     "survey" : "Votre avis m'interesse",
-    "missions" : "Mission"
+    "missions" : "Mission",
+    "ctoa" : "En savoir +"
   },
   "popup": {
     "wait" : "Veuillez patienter",
@@ -34,14 +42,15 @@
   },
   "widget": {
     "carousel": {
-      "show_project" : "Voir ce projet"
+      "show_project" : "Voir"
     },
     "contact": {
       "contact_me" : "Contactez moi",
       "all_project" : "Tous les projets",
       "back_home" : "Retour accueil",
       "me" : "Contactez Moi !",
-      "download" : "Télécharger mon CV"
+      "download" : "Télécharger mon CV",
+      "user_cv" : "Votre CV personalisé"
     },
     "history": {
       "title_1" : "Manager digital (2018)",

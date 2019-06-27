@@ -1,17 +1,17 @@
 <template>
   <v-card flat >
-      <bar-chart style="height:200px"  :chart-data="datacollection" :options="options"></bar-chart>
+      <doughnut-chart style="height:200px"  :chart-data="datacollection" :options="options"></doughnut-chart>
   </v-card>
 </template>
 
 <script>
-  import BarChart from './BarChart.js'
+  import DoughnutChart from './DoughnutChart.js'
   import { mapGetters } from 'vuex'
 
   export default {
     props: ['data'],
     components: {
-      BarChart
+      DoughnutChart
     },
     data () {
       return {
@@ -44,13 +44,14 @@
     mounted () {
       this.fillData()
       this.$nuxt.$on('rapport-ready', () => { 
+        console.log("receeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeive")
         this.fillData();
        });
     },
     methods: {
       fillData () {
-        console.log("ALimentation du tableau avec ces données")
-        console.log(this.data)
+        console.log("FILL DATA")
+        console.log(Object.values(this.data))
         this.datacollection = {
           //Si tabeau direct key value il faut utiliser : Object.keys(this.data) & Object.values(this.data)
           labels: Object.keys(this.data),
@@ -73,7 +74,6 @@
     },
     computed: {
     ...mapGetters({
-      // ...
       })
     }
   }

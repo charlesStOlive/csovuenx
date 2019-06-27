@@ -1,7 +1,7 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card v-if="moa">
+    <v-card color="rgb(255, 255, 255, 0.8)"  v-if="moa">
       <v-card-title primary-title>
         <div>
             <div class="headline">{{ moa.name }}</div>

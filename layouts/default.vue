@@ -1,6 +1,6 @@
 <template>
   <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }" dark> -->
-  <v-app id="inspire">
+  <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})`}" >
   <MError />
   <MContact />
     <v-navigation-drawer
@@ -55,59 +55,6 @@
             <v-list-tile-title>{{ $t('links.missions') }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile> 
-
-        <!-- <v-subheader>  Expertises</v-subheader>
-
-        <v-list-tile :to="$i18n.path('expertises/manager-digital')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-laptop</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Manager digital</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile :to="$i18n.path('expertises/buiseness-intelligence')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-brain</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Business intelligence</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile :to="$i18n.path('expertises/chef-projet-technique-dev')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-user-tag</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Chef de projet technique / Dev</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile> -->
-
-        
-
-
-        <!-- <v-subheader>Mes cibles</v-subheader>
-
-        <v-list-tile :to="$i18n.path('target/pme')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-building</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.pme') }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile :to="$i18n.path('target/eti-groupes')"  exact>
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-city</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.eti') }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile> -->
-
 
       </v-list> 
 
@@ -177,13 +124,13 @@
   import { mapGetters } from 'vuex'
 
 export default {
-  
   name: 'App',
   components: {
       MError,
       MContact
   },
   data () {
+   
     return {
       footer: {
         inset: false
@@ -195,15 +142,23 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Charles SaintO',
-      app: null
+      app: null,
+      bgImage : null
+      
       //
     }
   },
+  layout (context) {
+    
+    return 'default'
+  },
+  head() {
+      this.$vuetify.theme.primary = this.$store.getters["user/color"]
+      console.log(this.$store.getters["user/cloudi"]('eiffel'))
+      this.bgImage = this.$store.getters["user/cloudi"]('eiffel')
+      return { title:"Welcome" }
+    },
   mounted() {
-    console.log("yo"+this.bgImage)
-    // if(!this.apiTextReady) {
-    //   this.$store.dispatch('lang/getSelectedlocale');
-    // } 
     this.$nuxt.$on('launchMenu', () => { 
          this.launchMenu();
        });
@@ -212,13 +167,11 @@ export default {
 
   computed: {
     ...mapGetters({
-      // gt: 'lang/gt',
-      // gapp: 'lang/gapp',
-      // bgImage: 'lang/bgImage',
-      // params: 'lang/params',
-      // apiTextReady: 'lang/apiTextReady'
     })
 
+  },
+  fetch () {
+     
   },
   methods: {
     launchMenu() {

@@ -2,7 +2,7 @@
   <v-container v-if="readyss" fluid grid-list-md fill-height>
     <v-layout align-space-around justify-center row wrap fill-height>
       <v-flex d-flex sm12 md3>
-        <v-card flat>
+        <v-card color="rgb(255, 255, 255, 0.8)">
           <v-card-title
             primary
             class="title"
@@ -14,7 +14,7 @@
         </v-card>
       </v-flex>
       <v-flex d-flex sm12 md9>
-        <v-card flat>
+        <v-card color="rgb(255, 255, 255, 0.8)">
           <v-card-title primary class="title">{{ $t('project.photos') }}</v-card-title>
           <CarouselPhoto :data="project"></CarouselPhoto>
         </v-card>
