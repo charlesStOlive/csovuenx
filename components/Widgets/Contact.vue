@@ -24,7 +24,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
-import Mcontact2 from "@/components/Modal/Mcontact2"
+import Mcontact2 from "@/components/Modal/MContact2"
 export default {
   props: {
     back_btn: {
