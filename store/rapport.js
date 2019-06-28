@@ -15,6 +15,12 @@ export const getters = {
   regionId: state => {
     return state.regionId;
   },
+  weekStart: state => {
+    return state.rapport.global.weekStart
+  },
+  date: state => {
+    return state.rapport;
+  },
   url_pdf: (state) => (object) => {
     if(object.date) {
       return process.env.API_PATH+'pdfreportglobal/'+object.rapportKey+'/'+object.regionId+'/1/'+object.date
@@ -28,8 +34,7 @@ export const mutations = {
   SET_RAPPORT:(state, datas ) => {
     state.ready = true
     state.rapport = datas
-    console.log("Rapport ready")
-    console.log(state.rapport.region.week_sales)
+    state.regionId = datas.global.regionId
   },
   SET_READY:(state, value ) => {
     state.ready = value
@@ -53,7 +58,7 @@ export const actions = {
     console.log("We grab rapport info : "+url)
     return this.$axios.get(url)
     .then(response => {
-        console.log("getRapport SUCCESS")
+
         commit('increment');
         commit('SET_RAPPORT', response.data);
         

@@ -3,8 +3,11 @@
     <v-layout row wrap>
       <v-flex md4 xs12>
         <v-card  color="rgb(255, 255, 255, 0.8)">
+          <v-toolbar color="rgb(255, 255, 255, 0.5)">
+          <v-toolbar-title>{{ $t('home.title_2') }}</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
         <v-list class="transparent"  two-line>
-          <v-subheader>{{ $t('home.title_2') }}</v-subheader>
           <v-list-tile class="transparent" v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
             <v-list-tile-content>
               <v-list-tile-title>
@@ -16,28 +19,6 @@
         </v-list>
         </v-card>
       </v-flex>
-      
-      <!-- <v-flex
-        v-for="project in projects"
-        :key="project.id"
-        xs12
-      >
-      <v-card flat tile>
-        <v-layout row wrap>
-        <v-flex xs4>
-        <v-img
-           :src="project.main_picture.path"
-        ></v-img>
-        </v-flex>
-        <v-flex xs8>
-          {{ project.name }} 
-            <span v-if="project.client">Client :  {{ project.client.name }} </span>
-          <v-btn flat small :to="$i18n.path('moas/'+project.slug)" outline>{{ $t('links.show') }}</v-btn>
-        </v-flex>
-      </v-layout>
-      </v-card>
-      </v-flex>
-      </v-flex>-->
       <v-flex md8 pa-O ma-0>
         <nuxt-child :key="$route.params.slug"/>
       </v-flex>

@@ -13,9 +13,10 @@ import { mapGetters } from "vuex";
 //
 import Contact from "@/components/Widgets/Contact"
 
+
 export default {
   components: {
-    Contact
+    Contact,
   },
   data() {
     return {};

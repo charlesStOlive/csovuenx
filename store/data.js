@@ -116,13 +116,11 @@ export const  getters = {
         return state.settings.contacts;
     },
     false_contacts: state => {
-        console.log("false_contacts")
-        console.log(state.false_contacts)
         return state.false_contacts;
     },
     gi: (state) => (slug) => {
         if(slug == undefined) {
-            console.log("error : "+slug);
+            //console.log("error : "+slug);
         } else {
             return process.env.MEDIA_PATH + slug
         }

@@ -1,14 +1,16 @@
 <template>
+<div>
+  <ModalLoader :show="!ready" :title="$t('popup.wait_data')"/>
   <v-card color="rgb(255, 255, 255, 0.8)" v-if="ready" class="ma-4">
     <v-toolbar color="primary" dark tabs>
       <v-toolbar-title>Votre rapport</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-combobox placeholder="Modifier Région" v-model="selectedRegions" :items="rapport.regions" item-text="name" return-object/>
+      <v-combobox placeholder="Modifier Région"  v-model="selectedRegions" :items="rapport.regions" item-text="name" return-object/>
       <v-combobox placeholder="Modifier Semaine" v-model="selectedMonths" :items="rapport.old_report" item-text="name" return-object/>
-      <v-btn @click="changeRapport()" :loading="loading" class="grey">
+      <v-btn @click="changeRapport()" :loading="loading" :disabled="show_btn_changr" class="grey">
         Modifier
       </v-btn>
-      <v-btn @click="createUrlPdf()" :loading="loading" class="grey">
+      <v-btn @click="createUrlPdf()" class="grey">
         Télecharger
       </v-btn>
     </v-toolbar>
@@ -104,10 +106,11 @@
     </v-flex>
     </v-layout>
   </v-card>
-  
+</div>
 </template>
 
 <script>
+import ModalLoader from "@/components/Modal/ModalLoader";
 import Contact from "@/components/Widgets/Contact";
 import BarChartModel from '~/components/Charts/BarChartModel';
 import DoughnutChartModel from '~/components/Charts/DoughnutChartModel';
@@ -116,6 +119,7 @@ import { mapGetters } from "vuex";
 
 export default {
   components: {
+    ModalLoader,
     Contact,
     BarChartModel,
     DoughnutChartModel
@@ -152,7 +156,6 @@ export default {
   mounted() {
     let object = {}
     if (!this.$store.getters["rapport/ready"]) {
-      console.log(this.$store.getters["user/user"].key)
         object.rapportKey = this.$store.getters["user/user"].key
         object.regionId = this.$store.getters["rapport/regionId"]
       this.$store.dispatch("rapport/getRapport", object );
@@ -164,31 +167,32 @@ export default {
     '$store.state.rapport.increment'(v){
         this.loading= false
         this.$nuxt.$emit('rapport-ready');
+        this.selectedMonths
 
      },
-     // '$store.state.data.waitForData'(v){
-     //    console.log("data are ready we call update");
-     //    this.$nuxt.$emit('calculs-ready');
-     // }
   },
   methods: {
     changeRapport() {
       this.loading= true
       let object = {}
       object.rapportKey = this.$store.getters["user/user"].key
-      
       object.regionId = this.selectedRegions.id
       object.date = this.selectedMonths.date
-      console.log("CE QU ENVOI LE FORMULAIRE")
-      console.log( object)
-      console.log( this.selectedMonths)
       this.$store.dispatch("rapport/getRapport", object );
     },
     createUrlPdf() {
       let object = {}
       object.rapportKey = this.$store.getters["user/user"].key
-      object.regionId = this.selectedRegions.id
-      object.date = this.selectedMonths.date
+      if(!this.selectedRegions) {
+        object.regionId = this.$store.getters["rapport/regionId"]
+      } else {
+        object.regionId = this.selectedRegions.id
+      }
+      if(!this.selectedMonths) {
+        object.date = this.$store.getters["rapport/weekStart"]
+      } else {
+         object.date = this.selectedMonths.date
+      }
       this.openUrl(this.$store.getters["rapport/url_pdf"](object))
     },
     openUrl(url) {
@@ -202,6 +206,10 @@ export default {
       url_pdf: "rapport/url_pdf"
       //
     }),
+    show_btn_changr: function () {
+      if(this.selectedRegions && this.selectedMonths ) return false
+      return true
+    }
   }
 
 

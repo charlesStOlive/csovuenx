@@ -1,6 +1,8 @@
 <template>
-  <v-container fluid grid-list-md fill-height v-if="dataReady">
-    <v-layout row wrap align-end fill-height>
+  
+  <v-container fluid grid-list-md fill-height>
+    <ModalLoader :show="!dataReady" :title="$t('popup.show')"/>
+    <v-layout row wrap align-end fill-height  v-if="dataReady">
       <!-- BLOC 1 -->
       <v-flex d-flex xs12 md4>
         <BlocIntro/>
@@ -38,6 +40,7 @@
 </template>
 
 <script>
+import ModalLoader from "@/components/Modal/ModalLoader"
 import BlocIntro from "@/components/Blocs/BlocIntro"
 import BlocMoas from "@/components/Blocs/BlocMoas"
 import BlocDemo from "@/components/Blocs/BlocDemo"
@@ -49,6 +52,7 @@ import { mapGetters } from "vuex"
 
 export default {
   components: {
+    ModalLoader,
     BlocIntro,
     BlocMoas,
     BlocDemo,

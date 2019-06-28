@@ -2,9 +2,11 @@
   <v-container v-if="ready" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex md4 xs12>
-        <v-card color="rgb(255, 255, 255, 0.8)">
-        <v-list   class="transparent" two-line>
-          <v-subheader class="title">{{ $t('home.title_ct') }}</v-subheader>
+        <v-card  color="rgb(255, 255, 255, 0.8)">
+          <v-toolbar color="rgb(255, 255, 255, 0.5)">
+          <v-toolbar-title>{{ $t('home.title_ct') }}</v-toolbar-title>
+          </v-toolbar>
+        <v-list  class="transparent">
           <v-list-tile class="transparent" v-for="item in competencestypes" :key="item.id" :to="$i18n.path('competencestypes/'+item.slug)">
             <v-list-tile-content>
               <v-list-tile-title>

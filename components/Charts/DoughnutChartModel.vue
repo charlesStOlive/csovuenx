@@ -44,14 +44,11 @@
     mounted () {
       this.fillData()
       this.$nuxt.$on('rapport-ready', () => { 
-        console.log("receeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeive")
         this.fillData();
        });
     },
     methods: {
       fillData () {
-        console.log("FILL DATA")
-        console.log(Object.values(this.data))
         this.datacollection = {
           //Si tabeau direct key value il faut utiliser : Object.keys(this.data) & Object.values(this.data)
           labels: Object.keys(this.data),

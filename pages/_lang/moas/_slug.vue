@@ -2,12 +2,9 @@
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
     <v-card color="rgb(255, 255, 255, 0.8)"  v-if="moa">
-      <v-card-title primary-title>
-        <div>
-            <div class="headline">{{ moa.name }}</div>
-            
-        </div>
-      </v-card-title>
+      <v-toolbar color="rgb(255, 255, 255, 0.5)">
+      <v-toolbar-title>{{ moa.name }}</v-toolbar-title>
+    </v-toolbar>
       <v-card-text>
         <span v-if="moa.description" v-html="$md.render(moa.description)"/>
         <span class="primary--text">Cliquez sur une competence pour plus d'informations : </span>

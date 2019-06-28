@@ -15,8 +15,8 @@
     "ecommerce" : "Ecommerce",
     "last_projects" : "Derniers projets",
     "exemple_data_co" : "Exemple traitement de données",
-    "key_title" : "Comment le site s'adapte",
-    "key_description_no_user" : "Le site change d'aspect et de contenu si vous arrivez d'un de mes mails. faite un test en choisissant un des deux contacts.",
+    "key_title" : "Exemple exploitation de données",
+    "key_description_no_user" : "Le site change d'aspect et de contenu si vous arrivez d'un de mes mails. faites un test en choisissant un des deux faux contacts ci dessous.",
     "key_description_is_user" : "Vous arrivez d'un de mes mails. le contenu s'adapte à vous pas la créa, il manque votre société dans mes données. faite un test en choisissant un des deux contacts.",
     "key_description_is_user_contact" : "Vous arrivez d'un de mes mails. le site s'est adapté grâce à votre couleur et le logo",
     "crm_title" : "Exemple traitement de données",
@@ -34,10 +34,12 @@
     "show" : "Voir",
     "survey" : "Votre avis m'interesse",
     "missions" : "Mission",
-    "ctoa" : "En savoir +"
+    "ctoa" : "En savoir +",
+    "experiences" : "Experiences"
   },
   "popup": {
     "wait" : "Veuillez patienter",
+    "wait_data" : "Chargement des données",
     "close" : "Fermer"
   },
   "widget": {
@@ -94,5 +96,8 @@
     "lowerInput" : "Modifier les INPUT",
     "missing_value" : "Veuillez contacter l'administrateur."
 
+  },
+  "rapport": {
+    "title" : "Rapport CRM"
   }
 }

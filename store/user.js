@@ -38,13 +38,20 @@ export const getters = {
   },
   color: state => {
     if(state.user) {
-      console.log("utilisateur connu")
       if(state.user.client.base_color) {
-        console.log(state.user.client)
         return state.user.client.base_color
       } 
     }
     return "739aaa"
+
+  },
+  colors: state => {
+    if(state.user) {
+      if(state.user.client) {
+        return state.user.colors
+      } 
+    }
+    return null
 
   },
   cloudi: (state) => (slug) => {
@@ -64,7 +71,6 @@ export const mutations = {
   SET_USER:(state, datas ) => {
     state.ready = true
     state.user = datas
-    console.log("USER ready")
   },
   
 }
@@ -77,7 +83,6 @@ export const actions = {
     console.log(process.env.API_PATH+'user/'+userKey)
     return this.$axios.get(process.env.API_PATH+'user/'+userKey)
     .then(response => {
-        console.log("getUser SUCCESS")
         commit('SET_USER', response.data);
     })
     .catch(function (error) {

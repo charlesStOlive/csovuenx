@@ -49,8 +49,6 @@
     },
     methods: {
       fillData () {
-        console.log("ALimentation du tableau avec ces données")
-        console.log(this.data)
         this.datacollection = {
           //Si tabeau direct key value il faut utiliser : Object.keys(this.data) & Object.values(this.data)
           labels: Object.keys(this.data),

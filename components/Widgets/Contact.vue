@@ -10,7 +10,7 @@
       </v-flex>
       <v-flex md6 xs12>
       <v-layout column justify-center align-center child-flex>
-        <v-btn small  @click="callContact()" color="primary"><v-icon class="pr-1" small>email</v-icon>{{ $t('widget.contact.contact_me') }}</v-btn>
+        <Mcontact2/>
         <v-btn small v-if="is_user_client"  @click="openUrl(create_url_cv)" color="primary"><v-icon class="pr-1" small>file_copy</v-icon>{{ $t('widget.contact.user_cv') }}</v-btn>
         <v-btn v-if="projects_btn" pt-4 small  :to="$i18n.path('projects')"><v-icon class="pr-1" small>fa-briefcase</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
         <v-btn v-if="competences_btn" pt-4 small  :to="$i18n.path('skills')"><v-icon class="pr-1" small>arrow_back</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
@@ -24,6 +24,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import Mcontact2 from "@/components/Modal/Mcontact2"
 export default {
   props: {
     back_btn: {
@@ -38,6 +39,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  components: {
+    Mcontact2
   },
   data () {
     return {
@@ -59,7 +63,7 @@ export default {
     openUrl(url) {
       window.open(url);
     }
-  },
+  }
 }
 
 

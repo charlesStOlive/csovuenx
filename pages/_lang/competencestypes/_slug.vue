@@ -1,19 +1,17 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card color="rgb(255, 255, 255, 0.8)"  v-if="competencestype">
-      <v-card-title primary-title>
-        <div>
-            <div class="headline">{{ competencestype.name }}</div>
-            <span class="primary--text">Cliquez sur une compétence pour plus d'information</span>
-        </div>
-      </v-card-title>
+    <v-card color="rgb(255, 255, 255, 0.8)" v-if="competencestype">
+      <v-toolbar color="rgb(255, 255, 255, 0.5)">
+        <v-toolbar-title>{{ competencestype.name }}</v-toolbar-title>
+      </v-toolbar>
       <v-card-text>
-        <v-list class="transparent"  v-if="competencestype.competences" >
+        <span class="primary--text">Cliquez sur une compétence pour plus d'information</span>
+        <v-list class="transparent" v-if="competencestype.competences">
           <template v-for="competence in competencestype.competences">
             <v-divider :key="competence.id"></v-divider>
 
-            <v-list-tile  :key="'c'+competence.id" @click="showDialogue(competence)">
+            <v-list-tile :key="'c'+competence.id" @click="showDialogue(competence)">
               <v-list-tile-avatar>
                 <v-icon>{{ competence.wiki_picture }}</v-icon>
               </v-list-tile-avatar>
@@ -81,8 +79,8 @@ export default {
 </script>
 <style>
 .transparent {
-   background-color: rgba(255, 255, 255, 0)!important;
- }
+  background-color: rgba(255, 255, 255, 0) !important;
+}
 .resultContainer {
   background-color: rgb(255, 255, 255, 0.8);
 }

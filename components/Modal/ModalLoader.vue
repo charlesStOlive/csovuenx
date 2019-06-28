@@ -23,6 +23,14 @@
 
 <script>
   export default {
-    props: ['show'],
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    title: {
+      type: String,
+    },
+  },
 }
 </script>

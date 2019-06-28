@@ -13,23 +13,23 @@ export const  getters = {
 }
 
 export const  mutations = {
-    set_expertise:(state, datas ) => {
+    set_experience:(state, datas ) => {
         state.ready = true
         state.data = datas
         console.log("ready")
     },
-    set_expertise_not_ready:(state) => {
+    set_experience_not_ready:(state) => {
         state.data = []
         state.ready = false
     },
 }
 
 export const  actions = {
-    getExpertise({ commit, rootState }, slug) {
-        commit('set_expertise_not_ready');
-        return this.$axios.get(process.env.API_PATH+'expertises/'+slug)
+    getExperience({commit}) {
+        commit('set_experience_not_ready');
+        return this.$axios.get(process.env.API_PATH+'experiences')
         .then(response => {
-            commit('set_expertise', response.data);
+            commit('set_experience', response.data);
         })
         .catch(function (error) {
             let MyError = {}
