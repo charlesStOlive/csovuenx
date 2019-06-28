@@ -1,7 +1,8 @@
 <template>
 <div>
   <ModalLoader :show="!ready" :title="$t('popup.show')"/>
-  <v-timeline class="pa-5" v-if="ready">
+  <v-timeline class="pa-5 hidden-sm-and-down" v-if="ready" 
+>
     <v-timeline-item v-for="experience in data" :key="experience.id">
       <v-card class="elevation-2">
         <v-toolbar color="primary" dark>
@@ -23,6 +24,20 @@
       </v-card>
     </v-timeline-item>
   </v-timeline>
+  <v-layout row  v-if="ready" class="pa-5 hidden-md-and-up" v-for="experience in data" :key="experience.id">
+      <v-card class="elevation-2" width="100%">
+        <v-toolbar color="primary" dark>
+          <v-toolbar-title>{{ experience.name }}</v-toolbar-title>
+          <v-spacer></v-spacer>
+          {{ experience.description.secteur }}
+        </v-toolbar>
+        <v-card-text>
+          <p>{{ experience.description.start_month }}</p>
+          <p class="caption" v-html="$md.render(experience.description.description)"></p>
+          
+        </v-card-text> 
+      </v-card>
+    </v-layout>
   </div>
 </template>
 

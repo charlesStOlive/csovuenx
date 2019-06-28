@@ -6,8 +6,12 @@
           <v-toolbar color="rgb(255, 255, 255, 0.5)">
           <v-toolbar-title>{{ $t('home.title_2') }}</v-toolbar-title>
           <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-list class="transparent"  two-line>
+            <v-btn @click="showList = !showList" icon>
+              <v-icon color="primary" v-if="!showList">fa-plus-square</v-icon>
+              <v-icon v-if="showList">fa-minus-square</v-icon>
+            </v-btn>
+          </v-toolbar>
+          <v-list class="transparent" v-if="showList">
           <v-list-tile class="transparent" v-for="item in moas" :key="item.id" :to="$i18n.path('moas/'+item.slug)">
             <v-list-tile-content>
               <v-list-tile-title>
@@ -31,7 +35,9 @@ import { mapGetters } from "vuex";
 
 export default {
   data() {
-    return {};
+    return {
+      showList: true
+    };
   },
   head() {
     return { title: "MOAS" };
@@ -40,6 +46,8 @@ export default {
     if (!this.$store.getters["moa/dataReady"]) {
       this.$store.dispatch("moa/getMoas");
     }
+    if (this.$nuxt._route.params.slug && this.$vuetify.breakpoint.smAndDown)
+      this.showList = false;
   },
   methods: {},
   computed: {

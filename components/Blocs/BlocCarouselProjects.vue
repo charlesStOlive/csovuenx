@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      projects: "data/projects"
+      projects: "data/projects_carousel"
     })
   }
 };

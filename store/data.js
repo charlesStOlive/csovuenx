@@ -69,6 +69,12 @@ export const  getters = {
     projects: state => {
         return state.projects;
     },
+    projects_carousel: state => {
+        var filtered = state.projects.filter(function(hero) {
+            return hero.show_carousel == true
+        });
+        return filtered;
+    },
     targets: state =>  {
         return state.targets;
     },

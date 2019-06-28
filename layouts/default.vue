@@ -20,14 +20,7 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="callContact()" >
-          <v-list-tile-action>
-            <v-icon :small="!miniVariant">fa-envelope</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ $t('links.contact_me') }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        
 
         <v-list-tile :to="$i18n.path('projects')" >
           <v-list-tile-action>
@@ -68,7 +61,7 @@
       </v-list> 
 
       <v-spacer></v-spacer>
-
+      <MContact2 v-if="!miniVariant"/>
       <v-list>
         <v-list-tile v-if="$i18n.locale === 'fr'" :to="`/en` + $route.fullPath">
           <v-list-tile-action>
@@ -130,13 +123,15 @@
 <script>
   import MError from '@/components/Modal/MError';
   import MContact from '@/components/Modal/MContact';
+  import MContact2 from "@/components/Modal/MContact2"
   import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
   components: {
       MError,
-      MContact
+      MContact,
+      MContact2
   },
   data () {
    
