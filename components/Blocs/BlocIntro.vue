@@ -4,8 +4,9 @@
     <v-card-text>
       <span v-if="$i18n.locale === 'fr'" v-html="settings.site_intro"/>
       <span v-else v-html="settings.site_intro_en"/>
+      <Contact></Contact>
     </v-card-text>
-    <Contact></Contact>
+    
   </v-card>
 </template>
 <script>

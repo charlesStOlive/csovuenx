@@ -102,6 +102,9 @@
       <v-toolbar-side-icon @click="showMenu = !showMenu" />
       <v-toolbar-title v-text="title" />
       <v-spacer></v-spacer>
+      <v-btn @click="showList = !showList" icon>
+        <v-icon @click="openBo" v-if="!showList">settings</v-icon>
+      </v-btn>
           <!-- <v-toolbar-items>
             <v-btn dark small flat :to="$i18n.path('survey')">{{ $t('links.survey') }}</v-btn>
           </v-toolbar-items> -->
@@ -182,6 +185,9 @@ export default {
     },
     callContact() {
       this.$nuxt.$emit('call-contact')
+    },
+    openBo() {
+      window.open(process.env.API_PATH+'../backend', "_blank");
     }
   }
 
