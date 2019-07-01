@@ -9,8 +9,8 @@
           >{{ $t('project.project') }}Project : {{ project.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(project.description)"/>
-            <v-btn pt-4 small  :to="$i18n.path('skills')"><v-icon class="pr-1" small>arrow_back</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
-        <v-btn pt-4 small  :to="$i18n.path('')"><v-icon class="pr-1" small>fa-home</v-icon>{{ $t('widget.contact.back_home') }}</v-btn>
+            <v-btn pt-4 small  :to="$i18n.path('projects')"><v-icon class="pr-1" small>arrow_back</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
+            <v-btn pt-4 small  :to="$i18n.path('')"><v-icon class="pr-1" small>fa-home</v-icon>{{ $t('widget.contact.back_home') }}</v-btn>
           </v-card-text>
         </v-card>
       </v-flex>
