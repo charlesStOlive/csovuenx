@@ -2,7 +2,7 @@
   <v-container v-if="dataReady" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex v-for="project in projects" :key="project.id" md4 sm6 xs12>
-        <v-card color="rgb(255, 255, 255, 0.8)" tile>
+        <v-card class="white_tr" tile>
           <v-img :src="project.main_picture.path" aspect-ratio="1.6"></v-img>
 
           <v-card-title primary-title>

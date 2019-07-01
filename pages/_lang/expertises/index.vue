@@ -31,7 +31,6 @@ export default {
   },
   mounted() {
     if (!this.$store.getters["data/dataReady"]) {
-      console.log("Note ready");
       this.$store.dispatch("data/getSettings");
     }
   },

@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs12>
-      <v-card color="rgb(255, 255, 255, 0.8)">
+      <v-card class="white_tr">
         <v-card-title color="primary" class="title pb-0">{{ $t('home.title_2') }}</v-card-title>
         <v-list class="transparent" dense two-line>
           <v-list-tile

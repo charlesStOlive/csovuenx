@@ -13,8 +13,6 @@
         <MContact2/>
         <v-btn small v-if="is_user_client"  @click="openUrl(create_url_cv)" color="primary"><v-icon class="pr-1" small>file_copy</v-icon>{{ $t('widget.contact.user_cv') }}</v-btn>
         <v-btn v-if="projects_btn" pt-4 small  :to="$i18n.path('projects')"><v-icon class="pr-1" small>fa-briefcase</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
-        <v-btn v-if="competences_btn" pt-4 small  :to="$i18n.path('skills')"><v-icon class="pr-1" small>arrow_back</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
-        <v-btn v-if="back_btn" pt-4 small  :to="$i18n.path('')"><v-icon class="pr-1" small>fa-home</v-icon>{{ $t('widget.contact.back_home') }}</v-btn>
       </v-layout>
       </v-flex>
     </v-layout>

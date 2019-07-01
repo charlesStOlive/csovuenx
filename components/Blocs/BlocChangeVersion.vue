@@ -1,13 +1,13 @@
 <template>
-  <v-card color="rgb(255, 255, 255, 0.8)">
+  <v-card class="white_tr">
     <v-card-text primary>
       <p class="title">{{ $t('home.key_title') }}</p>
       <p v-if="is_user_client">{{ $t('home.key_description_is_user_contact') }}</p>
       <!-- <p v-if="is_user  && !is_user_contact">{{ $t('home.key_description_is_user') }}</p> -->
       <p v-if="!is_user">{{ $t('home.key_description_no_user') }}</p>
       <v-layout align-center row>
-        <ContactPart v-if="!is_user_client" btn :contact="contact[0]"/>
-        <ContactPart v-if="!is_user_client" btn :contact="contact[1]"/>
+        <ContactPart v-if="!is_user_client" exemple :contact="contact[0]"/>
+        <ContactPart v-if="!is_user_client" exemple :contact="contact[1]"/>
         <ContactPart v-if="is_user_client" :contact="user"/>
       </v-layout>
     </v-card-text>

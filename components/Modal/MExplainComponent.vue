@@ -52,7 +52,6 @@
   mounted() {
     this.$nuxt.$on('show-dialogue', (event) => {
     	this.helpData = event;
-  		console.log(this.helpData);
   		this.helpDialog = true;
     });
   },

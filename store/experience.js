@@ -16,7 +16,6 @@ export const  mutations = {
     set_experience:(state, datas ) => {
         state.ready = true
         state.data = datas
-        console.log("ready")
     },
     set_experience_not_ready:(state) => {
         state.data = []

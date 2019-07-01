@@ -20,7 +20,6 @@ export const  mutations = {
     SET_CTS:(state, datas ) => {
         state.ready = true
         state.data = datas
-        console.log("ready")
         console.log(state.data)
 
     },
@@ -29,9 +28,7 @@ export const  mutations = {
         state.ready = false
     },
     SET_CT:(state, slug ) => {
-        console.log("SET_CT "+slug)
         state.competencestype = state.data.find(obj => obj.slug === slug);
-        console.log(state.competencestype)
 
     },
 }

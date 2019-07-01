@@ -1,5 +1,5 @@
 <template>
-  <v-card color="rgb(255, 255, 255, 0.8)">
+  <v-card class="white_tr">
     <v-card-title class="headline primary--text">{{ $t('home.title_1') }}<span v-if="is_user">&nbsp;{{ user.name }} {{ user.fname }}</span></v-card-title>
     <v-card-text>
       <span v-if="$i18n.locale === 'fr'" v-html="settings.site_intro"/>

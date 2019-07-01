@@ -78,9 +78,8 @@ export const mutations = {
 export const actions = {
   
   getUser({ commit, rootState }, userKey) {
-    console.log("We grab user info")
-    //commit('SET_NOT_READY');
-    console.log(process.env.API_PATH+'user/'+userKey)
+    //console.log("We grab user info")
+    //console.log(process.env.API_PATH+'user/'+userKey)
     return this.$axios.get(process.env.API_PATH+'user/'+userKey)
     .then(response => {
         commit('SET_USER', response.data);
@@ -91,7 +90,6 @@ export const actions = {
         MyError.type = "type_error.request"
         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
         MyError.solution = "solution_error.refresh"
-        console.log(MyError)
         commit("errors/newError", MyError, { root: true })
     })
 },

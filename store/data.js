@@ -206,7 +206,6 @@ export const  actions = {
             commit('SET_READY');
         })
         .catch(function (error) {
-            console.log('error')
             let MyError = {}
             MyError.type = "type_error.request"
             MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
@@ -221,7 +220,6 @@ export const  actions = {
             commit('SET_COMPETENCES', response.data);
         })
         .catch(function (error) {
-            console.log('error')
             let MyError = {}
             MyError.type = "type_error.request"
             MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
@@ -238,7 +236,6 @@ export const  actions = {
         })
         .catch(function (error) {
             commit('SET_ERROR_SEND_FORM');
-            console.log('error sendQuestions') 
              let MyError = {}
              MyError.type = "type_error.request"
              MyError.message = error.response.request.responseURL + " " + error.response.request.statusText

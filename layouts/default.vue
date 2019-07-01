@@ -1,5 +1,5 @@
 <template>
-  <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})` }" dark> -->
+  <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgIm*age})` }" dark> -->
   <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})`}" >
   <MError />
   <MContact />
@@ -102,8 +102,8 @@
       <v-toolbar-side-icon @click="showMenu = !showMenu" />
       <v-toolbar-title v-text="title" />
       <v-spacer></v-spacer>
-      <v-btn @click="showList = !showList" icon>
-        <v-icon @click="openBo" v-if="!showList">settings</v-icon>
+      <v-btn icon>
+        <v-icon @click="openBo">settings</v-icon>
       </v-btn>
           <!-- <v-toolbar-items>
             <v-btn dark small flat :to="$i18n.path('survey')">{{ $t('links.survey') }}</v-btn>
@@ -194,23 +194,14 @@ export default {
 }
 </script>
 
-<style scoped>
-.back {
-  background-size: cover;
-}
-#inspire img {
-  height: 100%
-}
-.slider {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  height: 100vh;
+<style>
+.white_tr {
+  background-color: rgba(255, 255, 255, 0.911)!important;
 }
 .bgimg {
-  height: 100%;
-  background-size: cover;
-  background-position: 50%;
+  height: 100%!important;
+  background-size: cover!important;
+  background-position: 50%!important;
 }
 
 </style>

@@ -16,7 +16,6 @@ export const  mutations = {
     SET_PROJECT:(state, datas ) => {
         state.ready = true
         state.data = datas
-        console.log("ready")
     },
     SET_NOT_READY:(state) => {
         state.data = []

@@ -1,5 +1,5 @@
 <template>
-  <v-card color="rgb(255, 255, 255, 0.8)">
+  <v-card class="white_tr">
     <v-card-title primary class="title">{{ $t('home.last_projects') }}</v-card-title>
     <CarouselUnique :data="projects"></CarouselUnique>
   </v-card>

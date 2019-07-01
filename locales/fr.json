@@ -1,103 +1,101 @@
 {
   "home": {
-    "title" : "Accueil Charles SaintO",
-    "title_1" : "Bienvenue",
-    "title_2" : "Les missions d'un Digital Manager",
-    "title_ct" : "Choisissez un type de compétences. ",
-    "exemple_mission" : "Exemples de mission pour",
-    "skills" : "Compétences",
-    "sea_page" : "voir la page ",
-    "all_skills" : "voir toutes mes compétences",
-    "discover_demo" : "Découvrez une démo ",
-    "choose_best" : "Choisissez ce qui vous convient le mieux",
-    "dir_co" : "Commercial",
-    "agency" : "Agence",
-    "ecommerce" : "Ecommerce",
-    "last_projects" : "Derniers projets",
-    "exemple_data_co" : "Exemple traitement de données",
-    "key_title" : "Exemple exploitation de données",
-    "key_description_no_user" : "Le site change d'aspect et de contenu si vous arrivez d'un de mes mails. faites un test en choisissant un des deux faux contacts ci dessous.",
-    "key_description_is_user" : "Vous arrivez d'un de mes mails. le contenu s'adapte à vous pas la créa, il manque votre société dans mes données. faite un test en choisissant un des deux contacts.",
-    "key_description_is_user_contact" : "Vous arrivez d'un de mes mails. le site s'est adapté grâce à votre couleur et le logo",
-    "crm_title" : "Exemple traitement de données",
-    "crm_description" : "Afin de montrer mes capacité de traitements j'ai contruit un faux CRM avec 25 000 ventes, 50 commerciaux et 100 clients"
-
+    "title": "Accueil Charles SaintO",
+    "title_1": "Bienvenue",
+    "title_2": "Les missions d'un Digital Manager",
+    "title_ct": "Choisissez un type de compétences. ",
+    "exemple_mission": "Exemples de mission pour",
+    "skills": "Compétences",
+    "sea_page": "voir la page ",
+    "all_skills": "voir toutes mes compétences",
+    "discover_demo": "Découvrez une démo ",
+    "choose_best": "Choisissez ce qui vous convient le mieux",
+    "dir_co": "Commercial",
+    "agency": "Agence",
+    "ecommerce": "Ecommerce",
+    "last_projects": "Derniers projets",
+    "exemple_data_co": "Exemple traitement de données",
+    "key_title": "Exemple exploitation de données",
+    "key_description_no_user": "Le site change d'aspect et de contenu si vous arrivez d'un de mes mails. Faites un test en choisissant un des deux faux contacts ci-dessous : ",
+    "key_description_is_user": "Vous arrivez d'un de mes mails. le contenu s'adapte à vous pas la créa, il manque votre société dans mes données. faite un test en choisissant un des deux contacts.",
+    "key_description_is_user_contact": "Vous arrivez d'un de mes mails. le site s'est adapté grâce à votre couleur et le logo",
+    "crm_title": "Exemple traitement de données",
+    "crm_description": "Afin de montrer mes capacités de traitements j'ai construit un faux CRM avec 25 000 ventes, 50 commerciaux et 100 clients : "
   },
   "links": {
-    "home":"Accueil",
-    "contact_me":"Contactez moi",
+    "home": "Accueil",
+    "contact_me": "Contactez moi",
     "projects": "Les Projets",
     "skills": "Competences",
     "pme": "PME",
     "eti": "ETI & GROUPES",
     "reduce": "Reduire menu",
-    "show" : "Voir",
-    "survey" : "Votre avis m'interesse",
-    "missions" : "Mission",
-    "ctoa" : "En savoir +",
-    "experiences" : "Experiences"
+    "show": "Voir",
+    "survey": "Votre avis m'interesse",
+    "missions": "Mission",
+    "ctoa": "En savoir +",
+    "experiences": "Experiences"
   },
   "popup": {
-    "wait" : "Veuillez patienter",
-    "wait_data" : "Chargement des données",
-    "close" : "Fermer"
+    "wait": "Veuillez patienter",
+    "wait_data": "Chargement des données",
+    "close": "Fermer",
+    "show" : "Voir"
   },
   "widget": {
     "carousel": {
-      "show_project" : "Voir"
+      "show_project": "Voir"
     },
     "contact": {
-      "contact_me" : "Contactez moi",
-      "all_project" : "Tous les projets",
-      "back_home" : "Retour accueil",
-      "me" : "Contactez Moi !",
-      "download" : "Télécharger mon CV",
-      "user_cv" : "Votre CV personalisé"
+      "contact_me": "Contactez moi",
+      "all_project": "Tous les projets",
+      "back_home": "Retour accueil",
+      "me": "Contactez-moi !",
+      "download": "Télécharger mon CV",
+      "user_cv": "Votre CV personnalisé"
     },
     "history": {
-      "title_1" : "Manager digital (2018)",
-      "sub_title_1" : "Société :  Day On Mars",
-      "title_2" : "Chef de projet technique (2015)",
-      "sub_title_2" : "Société :  Day On Mars",
-      "title_3" : "Commercial & chef de projet technique (2010)",
-      "sub_title_3" : "Société :  Concept - Image",
-      "title_4" : "Experience entreprenarial (2005)",
-      "sub_title_4" : "Société outil-c",
-      "title_5" : "Commercial (2004)",
-      "sub_title_5" : "Société :  Day On Mars",
-      "title_6" : "Ecole de commerce (2003)",
-      "sub_title_6" : "Société :  Day On Mars",
-      "title_7" : "He is alive ! (1980)",
-      "sub_title_7" : "Maternité de lyon croix rousse"
+      "title_1": "Manager digital (2018)",
+      "sub_title_1": "Société : Day On Mars",
+      "title_2": "Chef de projet technique (2015)",
+      "sub_title_2": "Société : Day On Mars",
+      "title_3": "Commercial & chef de projet technique (2010)",
+      "sub_title_3": "Société : Concept - Image",
+      "title_4": "Experience entreprenarial (2005)",
+      "sub_title_4": "Société outil-c",
+      "title_5": "Commercial (2004)",
+      "sub_title_5": "Société : Day On Mars",
+      "title_6": "Ecole de commerce (2003)",
+      "sub_title_6": "Société : Day On Mars",
+      "title_7": "He is alive ! (1980)",
+      "sub_title_7": "Maternité de Lyon croix rousse"
     }
   },
   "skills": {
-    "next_wiki" : "La suite sur wikipedia",
-    "more" : "En savoir +"
+    "next_wiki": "La suite sur Wikipédia",
+    "more": "En savoir +"
   },
   "project": {
-    "project" : "Projet",
-    "photos" : "Photo & vidéo"
+    "project": "Projet",
+    "photos": "Photo & vidéo"
   },
   "target_mission": {
-    "target" : "Cible ",
-    "mission" : "Mission"
+    "target": "Cible ",
+    "mission": "Mission"
   },
-
   "type_error": {
-    "error" : "Erreur",
-    "request" : "Erreur de requête",
-    "type" : "Type",
-    "message" : "Message",
-    "solution" : "Solution"
+    "error": "Erreur",
+    "request": "Erreur de requête",
+    "type": "Type",
+    "message": "Message",
+    "solution": "Solution"
   },
   "solution_error": {
-    "refresh" : "L'application n'arrive pas à se connecter. ",
-    "lowerInput" : "Modifier les INPUT",
-    "missing_value" : "Veuillez contacter l'administrateur."
-
+    "refresh": "L'application n'arrive pas à se connecter. ",
+    "lowerInput": "Modifier les INPUT",
+    "missing_value": "Veuillez contacter l'administrateur."
   },
   "rapport": {
-    "title" : "Rapport CRM"
+    "title": "Rapport CRM"
   }
 }

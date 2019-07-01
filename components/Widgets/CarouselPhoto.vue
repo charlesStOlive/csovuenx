@@ -73,7 +73,6 @@ export default {
   },
   methods: {
     changePicture(nb) {
-      console.log("changePicture : "+nb)
       this.video = false
       if(nb == null) {
         this.pictureToShow = this.data.main_picture.path

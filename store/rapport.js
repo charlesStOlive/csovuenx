@@ -55,7 +55,7 @@ export const actions = {
     } else {
       url = process.env.API_PATH+'pdfreportglobal/'+object.rapportKey+'/'+object.regionId+'/0/'
     }
-    console.log("We grab rapport info : "+url)
+    //console.log("We grab rapport info : "+url)
     return this.$axios.get(url)
     .then(response => {
 
@@ -68,7 +68,7 @@ export const actions = {
         MyError.type = "type_error.request"
         MyError.message = error.response.request.responseURL + " " + error.response.request.statusText
         MyError.solution = "solution_error.refresh"
-        console.log(MyError)
+        //console.log(MyError)
         commit("errors/newError", MyError, { root: true })
     })
 },

@@ -20,7 +20,6 @@ export const  mutations = {
     SET_TARGET:(state, datas ) => {
         state.ready = true
         state.data = datas
-        console.log("ready")
     },
     SET_MISSION:(state, slug ) => {
        state.mission = state.data.missions.find(obj => obj.slug === slug);
@@ -33,7 +32,6 @@ export const  mutations = {
 
 export const  actions = {
     getTarget({ commit, rootState }, slug) {
-        console.log("getExpertise")
         commit('SET_NOT_READY');
         return this.$axios.get(process.env.API_PATH+'targets/'+slug)
         .then(response => {

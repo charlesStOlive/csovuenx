@@ -1,5 +1,4 @@
 export default async function({ store, route, redirect }) {
-	console.log('--start checkCountrtys--')
 	if(process.env.API_PATH == undefined) {
 		console.log("Alerte API_PATH is uknown")
 	}
@@ -15,7 +14,6 @@ export default async function({ store, route, redirect }) {
 	if(locale != paramlocale ) {
 		await store.dispatch('lang/toogleLang', paramlocale);
 		return redirect("/"+store.getters['lang/locale']+'/datacenter')
-		// console.log("end off lang");
 		// return redirect("/"+store.getters['lang/locale']+'/datacenter')
 	}
 

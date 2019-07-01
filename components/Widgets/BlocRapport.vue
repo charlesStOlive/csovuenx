@@ -1,5 +1,5 @@
 <template>
-  <v-card color="rgb(255, 255, 255, 0.8)">
+  <v-card class="white_tr">
     <v-card-title  color="primary" class="title">{{ $t('home.title_2') }}</v-card-title>
     <v-list class="transparent"  two-line >
       <v-list-tile   color="primary"

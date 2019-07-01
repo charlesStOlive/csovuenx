@@ -2,7 +2,7 @@
   <v-container v-if="ready" fluid grid-list-md fill-height>
     <v-layout row wrap>
       <v-flex md4 xs12>
-        <v-card color="rgb(255, 255, 255, 0.8)">
+        <v-card class="white_tr">
           <v-toolbar color="rgb(255, 255, 255, 0.5)">
             <v-toolbar-title>{{ $t('home.title_ct') }}</v-toolbar-title>
             <v-spacer></v-spacer>

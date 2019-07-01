@@ -1,5 +1,5 @@
 <template>
-  <v-card color="rgb(255, 255, 255, 0.8)">
+  <v-card class="white_tr">
     <v-layout d-flex row wrap>
       <v-flex>
         <v-img src="/img/creademo.jpg" width="100%"/>

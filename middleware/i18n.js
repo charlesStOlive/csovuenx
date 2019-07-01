@@ -3,7 +3,6 @@ export default function ({ isHMR, app, store, route, params, error, redirect }) 
   const defaultLocale = app.i18n.fallbackLocale
   // If middleware is called from hot module replacement, ignore it
   if (isHMR) {
-    console.log("IS HMR ????????????????????????????")
     return
 
   }

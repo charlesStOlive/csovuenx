@@ -5,25 +5,23 @@
       width="500"
     >
       <template v-slot:activator="{ on }">
-        <v-btn
-          color="primary"
-          dark
+        <v-btn fab dark small  color="primary lighten-2"
           v-on="on"
         >
-          Click Me
+          <v-icon>help_outline</v-icon>
         </v-btn>
       </template>
 
       <v-card>
         <v-card-title
-          class="headline grey lighten-2"
+          class="headline primary lighten-2"
           primary-title
         >
-          Privacy Policy
+          {{ title }}
         </v-card-title>
 
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <v-card-text> 
+          <slot></slot>
         </v-card-text>
 
         <v-divider></v-divider>
@@ -33,9 +31,9 @@
           <v-btn
             color="primary"
             flat
-            @click="dialog = false"
+            @click="show = false"
           >
-            I accept
+           OK
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -54,6 +52,7 @@
       },
       title: {
         type: String,
+        default: "Aide"
       },
       title_complete: {
         type: String,
@@ -61,6 +60,10 @@
       },
       content: {
         type: String,
+      },
+      txt:{
+        type: String,
+        default: "lorem ipsum"
       }
     },
     data() {

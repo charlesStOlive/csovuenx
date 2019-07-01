@@ -1,7 +1,7 @@
 <template>
   <div>
     <MCompetence :dialog="showDialogCompetence" :data="competenceData"/>
-    <v-card color="rgb(255, 255, 255, 0.8)" v-if="competencestype" class="scroll" height="100%">
+    <v-card class="white_tr" v-if="competencestype">
       <v-toolbar color="rgb(255, 255, 255, 0.5)">
         <v-toolbar-title>{{ competencestype.name }}</v-toolbar-title>
       </v-toolbar>

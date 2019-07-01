@@ -2,19 +2,20 @@
   <v-container v-if="readyss" fluid grid-list-md fill-height>
     <v-layout align-space-around justify-center row wrap fill-height>
       <v-flex d-flex sm12 md3>
-        <v-card color="rgb(255, 255, 255, 0.8)">
+        <v-card class="white_tr">
           <v-card-title
             primary
             class="title"
           >{{ $t('project.project') }}Project : {{ project.name }}</v-card-title>
           <v-card-text>
             <span v-html="$md.render(project.description)"/>
-            <Contact back_btn projects_btn></Contact>
+            <v-btn pt-4 small  :to="$i18n.path('skills')"><v-icon class="pr-1" small>arrow_back</v-icon>{{ $t('widget.contact.all_project') }}</v-btn>
+        <v-btn pt-4 small  :to="$i18n.path('')"><v-icon class="pr-1" small>fa-home</v-icon>{{ $t('widget.contact.back_home') }}</v-btn>
           </v-card-text>
         </v-card>
       </v-flex>
       <v-flex d-flex sm12 md9>
-        <v-card color="rgb(255, 255, 255, 0.8)">
+        <v-card class="white_tr">
           <v-card-title primary class="title">{{ $t('project.photos') }}</v-card-title>
           <CarouselPhoto :data="project"></CarouselPhoto>
         </v-card>

@@ -53,7 +53,6 @@ export default {
     
   },
   mounted() {
-    console.log("mounted")
     console.log(this.$nuxt._route.params)
   	this.missionSlug = this.$nuxt._route.params.slug
     this.$store.commit('target/SET_MISSION', this.missionSlug) 

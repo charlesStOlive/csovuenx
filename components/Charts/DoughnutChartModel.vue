@@ -15,34 +15,18 @@
     },
     data () {
       return {
-        datacollection: null,
+        datacollection: {},
         options: {
           maintainAspectRatio: false,
           responsive: true,
           legend: {
-            display: false
+            display: true
          },
-         scales: {
-            yAxes: [{
-               ticks: {
-                  beginAtZero: true,
-               },
-               display: true
-            }]
-         },
-         tooltips: {
-            callbacks: {
-                label: function(tooltipItems, data) {
-                    return tooltipItems.yLabel + " "+data.datasets[tooltipItems.datasetIndex].measure;
-                }
-            }
-
-          },
         },
       }
     },
     mounted () {
-      this.fillData()
+      this.fillData();
       this.$nuxt.$on('rapport-ready', () => { 
         this.fillData();
        });
@@ -54,9 +38,8 @@
           labels: Object.keys(this.data),
           datasets: [
             {
-              backgroundColor: this.$store.getters["user/color"],
+              backgroundColor: Object.values(this.$store.getters["user/colors"]),
               data: Object.values(this.data),
-              measure: " €",
             }
           ]
         }
