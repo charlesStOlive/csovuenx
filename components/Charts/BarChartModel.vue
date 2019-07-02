@@ -15,7 +15,7 @@
     },
     data () {
       return {
-        datacollection: null,
+        datacollection: {},
         options: {
           maintainAspectRatio: false,
           responsive: true,
@@ -49,6 +49,7 @@
     },
     methods: {
       fillData () {
+        console.log(this.data)
         this.datacollection = {
           //Si tabeau direct key value il faut utiliser : Object.keys(this.data) & Object.values(this.data)
           labels: Object.keys(this.data),

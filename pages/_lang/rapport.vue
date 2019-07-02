@@ -230,8 +230,9 @@ export default {
     //check if new calcul
     "$store.state.rapport.increment"(v) {
       this.loading = false;
-      this.$nuxt.$emit("rapport-ready");
-      this.selectedMonths;
+      setTimeout(function(){
+                this.$nuxt.$emit("rapport-ready")
+            }, 500);
     }
   },
   methods: {

@@ -58,9 +58,9 @@ export const actions = {
     //console.log("We grab rapport info : "+url)
     return this.$axios.get(url)
     .then(response => {
-
-        commit('increment');
         commit('SET_RAPPORT', response.data);
+        commit('increment');
+        
         
     })
     .catch(function (error) {
