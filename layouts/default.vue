@@ -161,7 +161,7 @@ export default {
   },
   head() {
       this.$vuetify.theme.primary = this.$store.getters["user/color"]
-      this.bgImage = this.$store.getters["user/cloudi"]('eiffel')
+      this.bgImage = this.$store.getters["user/cloudi"](this.$store.getters["user/main_picture"])
       return { title:"Welcome" }
     },
   mounted() {
@@ -196,12 +196,11 @@ export default {
 
 <style>
 .white_tr {
-  background-color: rgba(255, 255, 255, 0.911)!important;
+  background-color: rgba(255, 255, 255, 0.911) !important;
 }
 .bgimg {
-  height: 100%!important;
-  background-size: cover!important;
-  background-position: 50%!important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: 50% !important;
 }
-
 </style>
