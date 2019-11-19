@@ -9,8 +9,8 @@
           <v-img :src="gi(contact.client.logo)" contain height="80px"/>
         </v-flex>
         <v-flex caption xs12 md8  :style="'color:'+contact.client.base_color">
-          <p class="text-xs-right"><b>Contact : </b><br> {{ contact.name }} {{ contact.fname }}</p>
-          <p class="text-xs-right"><b>Société : </b>{{ contact.client.name }}</p>
+          <p class="text-xs-center text-md-right"><b>Contact : </b><br> {{ contact.name }} {{ contact.fname }}
+          <br><b>Société : </b>{{ contact.client.name }}</p>
         </v-flex>
       </v-layout>
       </v-container>

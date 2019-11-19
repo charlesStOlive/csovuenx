@@ -5,7 +5,7 @@
         <img src="/avatar/moije.jpg" alt="avatar"/>
       </v-avatar> -->
       <v-img  v-if="!is_user_client" :src="cloudi('bookmailcontactclient')"  contain height="200"/>
-      <v-img  v-if="is_user_client" :src="cloudi('bookmailcontactclient')" height="200"/>
+      <v-img  v-if="is_user_client" :src="cloudi('bookmailcontactclient')" contain height="200"/>
       </v-flex>
       <v-flex shrink>
       <v-layout column justify-center align-center child-flex>
