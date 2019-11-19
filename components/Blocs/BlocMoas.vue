@@ -1,6 +1,4 @@
 <template>
-  <v-layout row>
-    <v-flex xs12>
       <v-card class="white_tr">
         <v-card-title color="primary" class="title pb-0">{{ $t('home.title_2') }}</v-card-title>
         <v-list class="transparent" dense two-line>
@@ -20,8 +18,6 @@
           </v-list-tile>
         </v-list>
       </v-card>
-    </v-flex>
-  </v-layout>
 </template>
 <script>
 import { mapGetters } from "vuex";

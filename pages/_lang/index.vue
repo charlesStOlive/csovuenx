@@ -23,15 +23,15 @@
       <!-- FIN BLOC 1 -->
       <v-flex d-flex xs12 md4>
         <v-layout row wrap>
-          <v-flex d-flex>
+          <v-flex xs12>
             <BlocMoas/>
           </v-flex>
-          <v-flex d-flex>
+          <v-flex d-flex xs12>
             <BlocCarouselProjects/>
           </v-flex>
-          <v-flex d-flex>
+          <!-- <v-flex d-flex xs12>
             <BlocDemo/>
-          </v-flex>
+          </v-flex> -->
         </v-layout>
       </v-flex>
       <!-- DEBUT BLOC 1 -->

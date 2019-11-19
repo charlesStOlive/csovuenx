@@ -4,15 +4,15 @@
     <v-card color="rgb(255, 255, 255, 0)"  @click="openUrl(contact.key)" slot-scope="{ hover }" :class="`elevation-${hover ? upElevation : baseElevation}`"
       >
       <v-container class="pa-1">
-        <v-layout align-center justify-center column fill-height>
-          <v-flex
-            xs12
-            :style="'color:'+contact.client.base_color"
-          >Contact : {{ contact.name }} {{ contact.fname }}</v-flex>
-          <v-flex xs12>
-            <v-img :src="gi(contact.client.logo)" contain width="60" height="50"/>
-          </v-flex>
-        </v-layout>
+      <v-layout align-center justify-center row fill-height wrap>
+        <v-flex xs12 md4 >
+          <v-img :src="gi(contact.client.logo)" contain height="80px"/>
+        </v-flex>
+        <v-flex caption xs12 md8  :style="'color:'+contact.client.base_color">
+          <p class="text-xs-right"><b>Contact : </b><br> {{ contact.name }} {{ contact.fname }}</p>
+          <p class="text-xs-right"><b>Société : </b>{{ contact.client.name }}</p>
+        </v-flex>
+      </v-layout>
       </v-container>
     </v-card>
     </v-hover>

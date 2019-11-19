@@ -1,14 +1,13 @@
 <template>
-  <v-card-text class="text-xs-center">
-    <v-layout column wrap >
-      <v-flex md6 xs12>
-      <v-avatar v-if="!is_user_client"  tiled size="80" color="grey lighten-4" >
+    <v-layout align-center justify-center row fill-height wrap>
+      <v-flex xs12 md4>
+      <!-- <v-avatar v-if="!is_user_client"  tiled size="80" color="grey lighten-4" >
         <img src="/avatar/moije.jpg" alt="avatar"/>
-      </v-avatar>
-      
-      <v-img  v-if="is_user_client" :src="cloudi('bookmailcontactclient')" contain height="200"/>
+      </v-avatar> -->
+      <v-img  v-if="!is_user_client" :src="cloudi('bookmailcontactclient')"  contain height="200"/>
+      <v-img  v-if="is_user_client" :src="cloudi('bookmailcontactclient')" height="200"/>
       </v-flex>
-      <v-flex md6 xs12>
+      <v-flex shrink>
       <v-layout column justify-center align-center child-flex>
         <MContact2/>
         <v-btn small v-if="is_user_client"  @click="openUrl(create_url_cv)" color="primary"><v-icon class="pr-1" small>file_copy</v-icon>{{ $t('widget.contact.user_cv') }}</v-btn>
@@ -17,7 +16,7 @@
       </v-flex>
     </v-layout>
             
-          </v-card-text>
+          
 
 </template>
 <script>

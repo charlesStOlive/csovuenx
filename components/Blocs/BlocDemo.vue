@@ -1,5 +1,6 @@
 <template>
   <v-card class="white_tr">
+    <v-container>
     <v-layout d-flex row wrap>
       <v-flex>
         <v-img src="/img/creademo.jpg" width="100%"/>
@@ -30,5 +31,6 @@
         </v-card-title>
       </v-flex>
     </v-layout>
+    </v-container>
   </v-card>
 </template>
