@@ -1,6 +1,7 @@
 <template>
   <!-- <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgIm*age})` }" dark> -->
-  <v-app id="inspire" class="bgimg" :style="{ backgroundImage: `url(${bgImage})`}" >
+    <v-app id="inspire"  >
+      <div class="bgimg" :style="{ backgroundImage: `url(${bgImage})`}">
   <MError />
   <MContact />
     <v-navigation-drawer
@@ -120,7 +121,9 @@
     >
       <span>&copy; 2019</span>
     </v-footer>
+    </div>
   </v-app>
+  
 </template>
 
 <script>
@@ -201,6 +204,7 @@ export default {
 .bgimg {
   height: 100% !important;
   background-size: cover !important;
+  background-attachment: fixed;
   background-position: 50% !important;
 }
 </style>
