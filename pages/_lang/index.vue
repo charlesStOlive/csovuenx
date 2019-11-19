@@ -2,7 +2,7 @@
   
   <v-container fluid grid-list-md fill-height>
     <ModalLoader :show="!dataReady" :title="$t('popup.show')"/>
-    <v-layout row wrap align-end fill-height  v-if="dataReady">
+    <v-layout row wrap align-start fill-height  v-if="dataReady">
       <!-- BLOC 1 -->
       <v-flex d-flex xs12 md4>
         <BlocIntro/>
