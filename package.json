@@ -18,7 +18,7 @@
     "@nuxtjs/markdownit": "^1.2.3",
     "chart.js": "^2.7.3",
     "cross-env": "^5.2.0",
-    "mathjs": "^5.4.2",
+    "mathjs": "^7.5.1",
     "nuxt": "^2.6.3",
     "vue-carousel": "^0.18.0-alpha",
     "vue-chartjs": "^3.4.2",
